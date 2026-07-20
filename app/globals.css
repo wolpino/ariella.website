@@ -1,0 +1,237 @@
+/* Theme tokens — values come from themes/*.ts conceptually; CSS mirrors them per data-theme */
+
+html {
+  height: 100%;
+  color-scheme: light;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root,
+[data-theme="professional"] {
+  --color-bg: #f4f2ee;
+  --color-fg: #1b1b1b;
+  --color-muted: #5a5a5a;
+  --color-accent: #1f4d3a;
+  --color-accent-fg: #f7faf8;
+  --color-border: #d9d4cb;
+  --color-surface: #fffcf8;
+  --color-focus: #1f4d3a;
+  --font-display: var(--font-display-professional), "Georgia", serif;
+  --font-body: var(--font-body-professional), "Helvetica Neue", sans-serif;
+  --motion-duration: 160ms;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+[data-theme="fun"] {
+  --color-bg: #fff3e8;
+  --color-fg: #2a1020;
+  --color-muted: #7a4e5f;
+  --color-accent: #e23d5d;
+  --color-accent-fg: #fff8f5;
+  --color-border: #f2c9b8;
+  --color-surface: #ffe7d4;
+  --color-focus: #e23d5d;
+  --font-display: var(--font-display-fun), "Trebuchet MS", sans-serif;
+  --font-body: var(--font-body-fun), "Helvetica Neue", sans-serif;
+  --motion-duration: 280ms;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color var(--motion-duration) ease,
+    color var(--motion-duration) ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .site-main {
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.site-header__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .site-header__inner {
+    padding: 1rem 2rem;
+  }
+}
+
+.site-header__brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  margin-right: auto;
+}
+
+.site-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.site-header__link {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__link:hover {
+  color: var(--color-fg);
+}
+
+/* Theme toggle */
+
+.theme-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.theme-toggle__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.85rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition:
+    background-color var(--motion-duration) ease,
+    color var(--motion-duration) ease;
+}
+
+.theme-toggle__btn[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+.theme-toggle__btn:hover:not([aria-pressed="true"]) {
+  color: var(--color-fg);
+}
+
+/* Foundation home shell */
+
+.foundation-shell {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 40rem;
+}
+
+.foundation-shell h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.foundation-shell p {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.foundation-shell__note {
+  padding: 1rem 1.15rem;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+[data-theme="fun"] .foundation-shell h1 {
+  letter-spacing: -0.01em;
+}
+
+[data-theme="fun"] body {
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 10% -10%,
+      color-mix(in srgb, var(--color-accent) 18%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 0%,
+      color-mix(in srgb, var(--color-border) 80%, transparent),
+      transparent 50%
+    );
+  background-attachment: fixed;
+}
