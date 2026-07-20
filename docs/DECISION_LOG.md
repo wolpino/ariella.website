@@ -72,3 +72,9 @@ Format:
 - **Q:** Start PR2 or fix main first?
 - **A:** Fix main first (point at verified foundation), close PR1 docs, then PR2.
 - **Implication:** `main` should match `feat/foundation` tip before branching `feat/mvp-pages`.
+
+## 2026-07-20 — Fun theme colors from Wix
+
+- **Q:** Fun colors closer to the Wix site?
+- **A:** Yes. Wix is dark charcoal + muted gold brand (`#ecc85c`) + construction yellow accents — not peach/coral.
+- **Implication:** Fun theme uses dark ground (`#141414`), gold accent, hazard-stripe tape; Professional stays light.
