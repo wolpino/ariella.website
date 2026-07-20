@@ -1,0 +1,24 @@
+---
+description: Operating protocol for ariella.website — shared agent memory and PR workflow
+alwaysApply: true
+---
+
+# ariella.website agent protocol
+
+Before implementing, read:
+
+1. `AGENTS.md`
+2. `PLAN.md`
+3. `docs/PULL_REQUESTS.md`
+4. `docs/DECISION_LOG.md`
+5. `STATUS.md`
+
+Rules:
+
+- Work **one PR chunk at a time** as listed in `docs/PULL_REQUESTS.md`
+- Prefer settled answers in `docs/DECISION_LOG.md` over re-asking
+- When the user answers a clarifying question, **append** Q/A/Implication to `docs/DECISION_LOG.md` before continuing
+- After finishing a chunk, stop for human verify unless asked to continue
+- When the user is satisfied with a chunk, write the matching `docs/PHASE-*.md` and update `STATUS.md` + `docs/PULL_REQUESTS.md`
+- Keep changes scoped; no monorepo, CMS, or out-of-chunk features
+- Honor non-negotiables: mobile, a11y, image performance, theme reliability, recruiter clarity

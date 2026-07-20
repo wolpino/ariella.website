@@ -1,168 +1,51 @@
-# Product Specification
+# Spec — ariella.website
 
-## 1. Overview
+Short product/tech source of truth. Living detail and phases live in [PLAN.md](PLAN.md). Agent workflow lives in [AGENTS.md](AGENTS.md).
 
-- Vision
-- Goals
-- Target Audience
-- Success Criteria
+## Product
 
----
+Personal site hub for Ariella Wolpin: projects (creative + code), experience, and links to satellite apps.
 
-## 2. Product
+- **Audience:** recruiters / interviewers (Professional) and a creative self-expression mode (Fun)
+- **Domain:** `ariella.website` on Vercel
+- **Satellites (linked, not in this repo yet):** `photos.ariella.website` (photo feed); Trial & Eclair (later)
 
-- Site Map
-- Features
-- Roadmap
-- Future Projects
+## Dual theme
 
----
+| | Professional (default) | Fun |
+|--|------------------------|-----|
+| Feel | Restrained, clean, recruiter-ready | Expressive; evolved from current Wix site |
+| Change | Presentation only | Presentation only |
 
-## 3. Technical Overview
+Shared: navigation, content, routing, components, accessibility, IA.
 
-This project is documented through the following engineering specifications.
+Config: `themes/professional.ts` + `themes/fun.ts` → CSS variables via `data-theme`.
 
-| Document | Purpose |
-|----------|---------|
-| Architecture | Repository structure, packages, deployment, routing |
-| Theme System | Professional/Fun themes, theme provider, design tokens |
-| Design System | Typography, colors, spacing, motion, component conventions |
-| Content Model | Schemas for projects, experience, blog posts, photography and navigation |
-| Component Library | Reusable UI components and usage guidelines |
-| Development Standards | Coding style, testing, linting, branching strategy, CI/CD |
-| Deployment | Vercel configuration, domains, environments |
-| ADRs | Engineering decisions and rationale |
+## Site map (by phase)
 
----
+| Phase | Routes |
+|-------|--------|
+| MVP (PR2) | `/`, `/projects`, `/contact` |
+| 2a (PR4) | `/about` (Résumé \| Story) |
+| 2b (PR5) | `/collections` (+ Fun home teaser) |
+| 3 (PR6) | `/notes` (scaffold; content when ready) |
 
-## 4. Public Engineering Documentation
+## Content model
 
-All engineering documentation is written in Markdown/MDX and serves two purposes:
+In-repo TypeScript (and later MD/MDX) under `content/` — no CMS for v1.
 
-- `/docs` acts as the source of truth for the repository.
-- `/engineering` on ariella.website renders the same documentation for visitors.
+- `site.ts` — name, nav, socials
+- `projects.ts` — hub cards (internal + external URLs)
+- Later: `experience.ts`, `collections/`, `notes/`
 
-The website and repository intentionally share a single documentation source to avoid duplication.
+## Non-negotiables
 
----
+1. Mobile / responsive
+2. Accessibility (keyboard, contrast both themes, reduced motion)
+3. Image performance
+4. Theme reliability (Professional default, no flash)
+5. Recruiter clarity in Professional
 
-## 5. Theme System (Summary)
+## Out of scope (v1)
 
-The portfolio supports two visual identities:
-
-- **Professional** – restrained, clean, minimal, optimized for recruiters and hiring managers.
-- **Fun** – expressive, colorful, playful, showcasing creativity.
-
-Both themes share:
-
-- Navigation
-- Content
-- Routing
-- Components
-- Accessibility
-- Information Architecture
-
-Only presentation changes.
-
-Implementation details are defined in **Theme System Specification**.
-
----
-
-## 6. Architecture (Summary)
-
-The portfolio is built as a Turborepo monorepo containing multiple independent applications and shared packages.
-
-Applications include:
-
-- ariella.website 
-- Trial & Eclair
-- Photography
-- Future projects
-
-Shared packages provide:
-
-- UI components
-- Theme system
-- Types
-- Utilities
-- Content models
-
-Implementation details are defined in **Architecture Specification**.
-
----
-
-## 7. Design System (Summary)
-
-The design system defines:
-
-- Design tokens
-- Typography
-- Color palettes
-- Motion
-- Icons
-- Layout
-- Component styling
-
-It is shared across all applications.
-
----
-
-## 8. Content Model (Summary)
-
-All content is data-driven.
-
-Content includes:
-
-- Projects
-- Experience
-- Skills
-- Blog posts
-- Photography
-- Navigation
-- Social links
-
-Presentation is separated from content, allowing pages and components to consume a single source of truth.
-
----
-
-## 9. Component Library (Summary)
-
-All reusable UI components live in a shared package.
-
-Each component documents:
-
-- Purpose
-- Props
-- Accessibility requirements
-- Usage examples
-- Theme behavior
-
----
-
-## 10. Development Standards (Summary)
-
-The project follows documented engineering standards covering:
-
-- Repository organization
-- Code style
-- Testing
-- Git workflow
-- Continuous Integration
-- Dependency management
-- Documentation standards
-
----
-
-## 11. Decision Records
-
-Significant engineering decisions are documented as ADRs (Architecture Decision Records).
-
-Each ADR explains:
-
-- Context
-- Problem
-- Alternatives considered
-- Decision
-- Consequences
-
-These documents capture the reasoning behind technical choices as the project evolves.
+Monorepo, merging the photos feed app, CMS, auth, public engineering docs site, ADRs-as-process.
