@@ -60,3 +60,15 @@ Format:
 - **Q:** How to ship with multiple agents?
 - **A:** Small commits; one PR per chunk; human verify → fix → write phase docs; living PLAN; decision log for Q&A; AGENTS.md + always-on rule for shared memory.
 - **Implication:** Agents must read PLAN / PULL_REQUESTS / DECISION_LOG / STATUS; update DECISION_LOG when asking questions.
+
+## 2026-07-20 — CLAUDE.md
+
+- **Q:** Why is there a CLAUDE.md file?
+- **A:** Create Next App added it for Claude Code (`@AGENTS.md`). Not needed for Cursor-only workflow; removed.
+- **Implication:** Do not re-add CLAUDE.md unless using Claude Code CLI.
+
+## 2026-07-20 — Fix main before PR2
+
+- **Q:** Start PR2 or fix main first?
+- **A:** Fix main first (point at verified foundation), close PR1 docs, then PR2.
+- **Implication:** `main` should match `feat/foundation` tip before branching `feat/mvp-pages`.
