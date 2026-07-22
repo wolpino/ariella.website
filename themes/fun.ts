@@ -1,9 +1,9 @@
 import type { ThemeConfig } from "./types";
 
 /**
- * Expressive, Wix-inspired — opt-in.
- * Sampled from ariellawolpin.wixsite.com: charcoal ground, muted gold brand,
- * construction yellow accents.
+ * Expressive composition-notebook Fun theme — opt-in.
+ * Cover vs open surfaces, binding-tape header, gold `#ecc85c` titles:
+ * see docs/FUN-THEME.md
  */
 export const fun: ThemeConfig = {
   id: "fun",

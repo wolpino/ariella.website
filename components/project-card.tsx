@@ -7,24 +7,27 @@ type Props = {
 
 export function ProjectCard({ project }: Props) {
   const isSoon = project.status === "coming-soon";
-  const className = `project-card${isSoon ? " project-card--soon" : ""}`;
+  const className = `composition-label composition-label--card project-card${
+    isSoon ? " project-card--soon" : ""
+  }`;
 
   const body = (
     <>
-      <div className="project-card__meta">
-        <span className="project-card__category">
-          {categoryLabels[project.category]}
-        </span>
-        {isSoon ? (
-          <span className="project-card__status">Coming soon</span>
-        ) : project.external ? (
-          <span className="project-card__status">External</span>
-        ) : null}
+      <div className="composition-label__meta">
+        <span>{categoryLabels[project.category]}</span>
+        {isSoon ? <span>Coming soon</span> : null}
+        {!isSoon && project.external ? <span>External</span> : null}
       </div>
-      <h2 className="project-card__title">{project.title}</h2>
-      <p className="project-card__summary">{project.summary}</p>
+      <h2 className="composition-label__title composition-label__title--card">
+        {project.title}
+      </h2>
+      <div className="composition-label__lines" aria-hidden="true">
+        <span />
+        <span />
+      </div>
+      <p className="composition-label__lede">{project.summary}</p>
       {!isSoon ? (
-        <span className="project-card__cta">
+        <span className="composition-label__cta">
           {project.external ? "Open project" : "View"} →
         </span>
       ) : null}
