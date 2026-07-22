@@ -78,3 +78,9 @@ Format:
 - **Q:** Fun colors closer to the Wix site?
 - **A:** Yes. Wix is dark charcoal + muted gold brand (`#ecc85c`) + construction yellow accents — not peach/coral.
 - **Implication:** Fun theme uses dark ground (`#141414`), gold accent, hazard-stripe tape; Professional stays light.
+
+## 2026-07-21 — Composition notebook texture
+
+- **Q:** Fun still doesn’t feel fun; missing composition notebook background?
+- **A:** Add notebook texture, but toned down vs full Wix (scrim over speckles so it reads as atmosphere, not noise).
+- **Implication:** Fun uses `/public/textures/composition-notebook.png` under translucent scrims on body/header/hero/cards.
