@@ -21,6 +21,8 @@ Shared: navigation, content, routing, components, accessibility, IA.
 
 Config: `themes/professional.ts` + `themes/fun.ts` → CSS variables via `data-theme`.
 
+Fun presentation rules (cover vs open notebook): [docs/FUN-THEME.md](docs/FUN-THEME.md).
+
 ## Site map (by phase)
 
 | Phase | Routes |

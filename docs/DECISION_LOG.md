@@ -79,8 +79,21 @@ Format:
 - **A:** Yes. Wix is dark charcoal + muted gold brand (`#ecc85c`) + construction yellow accents — not peach/coral.
 - **Implication:** Fun theme uses dark ground (`#141414`), gold accent, hazard-stripe tape; Professional stays light.
 
-## 2026-07-21 — Composition notebook texture
+## 2026-07-21 — Composition notebook texture (superseded)
 
 - **Q:** Fun still doesn’t feel fun; missing composition notebook background?
-- **A:** Add notebook texture, but toned down vs full Wix (scrim over speckles so it reads as atmosphere, not noise).
-- **Implication:** Fun uses `/public/textures/composition-notebook.png` under translucent scrims on body/header/hero/cards.
+- **A:** First pass used a generated speckled tile under scrims.
+- **Implication:** Superseded by cover-vs-open notebook decision below; do not use `composition-notebook.png` for the cover.
+
+## 2026-07-21 — Fun = composition notebook (cover vs open)
+
+- **Q:** How should Fun use composition notebook, gold Notes strips, labels vs stickers, and lined paper?
+- **A:**
+  - **Home** = notebook **cover** (marble field).
+  - **Other pages** = **opened** notebook (not full intense marble).
+  - Marble source: prefer **Staples** (`images/compositionstaples.jpg`); Oxford OK if cleaner. Soften pattern — busyness is a concern.
+  - **Black binding tape** is the **top header** (horizontal). Brand, nav, and theme toggle sit **on the tape** — no thinner chrome bar above it.
+  - **Gold/yellow paper with clear tape** (Wix Notes color `~#ecc85c`) = **page title headers only** on inner pages (like “Notes” on the muffin post), not on Home chrome.
+  - Home modules = **composition white labels** (like the printed label on the cover), not stickers/polaroids.
+  - Full lined-paper + heavy marble (Wix Notes post) is too intense / hard for text. **Lined paper can appear as an accent** on open pages, not as a full-page text surface.
+- **Implication:** See [docs/FUN-THEME.md](FUN-THEME.md). Keep Professional unchanged.

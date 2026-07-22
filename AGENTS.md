@@ -12,7 +12,8 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 2. [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) — which PR chunk is next / in progress
 3. [docs/DECISION_LOG.md](docs/DECISION_LOG.md) — prior Q&A (do not re-ask settled questions)
 4. [STATUS.md](STATUS.md) — current focus / blockers
-5. Latest `docs/PHASE-*.md` if continuing after a shipped chunk
+5. [docs/FUN-THEME.md](docs/FUN-THEME.md) — when touching Fun visuals
+6. Latest `docs/PHASE-*.md` if continuing after a shipped chunk
 
 ## Workflow
 
@@ -30,7 +31,7 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 ## Stack & constraints
 
 - Next.js App Router + TypeScript; single app; no monorepo for now
-- Professional theme default; Fun is opt-in (theme config in `themes/`)
+- Professional theme default; Fun is opt-in (theme config in `themes/`; Fun layout rules in `docs/FUN-THEME.md`)
 - Non-negotiables: mobile, a11y, image performance, theme reliability, recruiter clarity
 - Satellites stay linked out (`photos.ariella.website`, Trial & Eclair later)
 - No CMS, no Turborepo, no public `/engineering` docs site for v1

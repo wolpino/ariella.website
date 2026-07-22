@@ -38,6 +38,11 @@ Workflow: implement chunk → small commits → you verify → fixes → write `
 
 Components use `var(--*)` only — no `if (fun)` in UI logic. Persist preference (cookie + localStorage).
 
+**Fun metaphor:** composition notebook — see [docs/FUN-THEME.md](docs/FUN-THEME.md).
+- Home = **cover** (softened Staples marble + white composition labels)
+- Other pages = **open** (gold taped page titles; lined paper as accent)
+- Header = horizontal **binding tape** (everything on the tape)
+
 ## Photography
 
 | Experience | Where | When |
