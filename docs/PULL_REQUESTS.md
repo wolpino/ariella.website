@@ -3,8 +3,8 @@
 | ID | Status | Branch | Scope | Phase doc | GitHub |
 |----|--------|--------|-------|-----------|--------|
 | PR1 | done | `feat/foundation` | Docs spine + SPEC rewrite + Next scaffold + theme toggle | `docs/PHASE-1-foundation.md` | — |
-| PR2 | in_progress | `feat/mvp-pages` | Home / Projects / Contact + Fun Wix styling + quality bar | `docs/PHASE-1-mvp.md` | — |
-| PR3 | todo | `feat/deploy` | Vercel + `ariella.website` domain | `docs/PHASE-1-deploy.md` | — |
+| PR2 | done | `feat/mvp-pages` | Home / Projects / Contact + Fun Wix styling + quality bar | `docs/PHASE-1-mvp.md` | — |
+| PR3 | in_progress | `feat/deploy` | Vercel + `ariella.website` domain | `docs/PHASE-1-deploy.md` | — |
 | PR4 | todo | `feat/about` | About Résumé/Story + richer projects hub | `docs/PHASE-2a-about.md` | — |
 | PR5 | todo | `feat/collections` | `CollectionStack` + lightbox + 1–2 collections | `docs/PHASE-2b-collections.md` | — |
 | PR6 | todo | `feat/notes-collections` | Notes scaffold + more collections | `docs/PHASE-3.md` | — |

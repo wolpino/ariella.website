@@ -13,6 +13,9 @@ export const site = {
   name: "Ariella Wolpin",
   shortName: "Ariella",
   tagline: "Design, photography, and code — a hub for projects in progress.",
+  /** Fun Home lockup — Wix used “collections” under the name */
+  funHeading: "collections",
+  funTopics: ["photography", "web applications", "notes"] as const,
   /** TODO: replace with your preferred public email */
   email: "hello@ariella.website",
   nav: [

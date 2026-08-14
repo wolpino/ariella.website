@@ -1,43 +1,51 @@
-# Fun theme — composition notebook
+# Fun theme — photobooth + pinball hybrid
 
-Source of truth for Fun presentation. Professional is separate and stays restrained. Decisions: [DECISION_LOG.md](DECISION_LOG.md).
+Source of truth for Fun presentation. Professional stays restrained and separate. Decisions: [DECISION_LOG.md](DECISION_LOG.md).
 
 ## Metaphor
 
-| Surface | Route(s) | Look |
-|---------|----------|------|
-| **Cover** | `/` (Home) | Black-and-white marble cover; modules as white **composition labels** |
-| **Open** | `/projects`, `/contact`, later `/about`, `/notes`, … | Opened notebook: calmer ground; **gold taped page title**; lined paper as **accent** only |
+**Inky photobooth structure** + **one warm pinball glow**. Narrow vertical rhythm (not a wide Wix triptych). Strip photos are placeholders and can swap later.
 
-## Header (all Fun pages)
+| Surface | Look |
+|---------|------|
+| Ground | Near-black (`#050505`), subtle vignette |
+| Frames / cards | Thick black gutters, sharp corners, high-contrast panels |
+| Accent | Single amber pinball-bulb glow (`#ffb020`) — not multi-neon |
+| Home hero | **collections** + topic lede + **cycling vertical photo strip** |
 
-- Horizontal **black binding tape** (`public/textures/binding-tape.jpg`, from Staples spine).
-- Site brand, nav, and Professional/Fun toggle sit **on the tape**.
-- No extra chrome bar above the tape.
-- Brand gold matches Wix: `#ecc85c`.
+## Vertical strip
 
-## Assets
+- Component: `components/photo-strip.tsx`
+- Frame list: `content/fun-strip.ts` (all frames loop; two visible at a time)
+- Assets: `public/fun-strip/*` (resized from `images/`)
+- Fun-only (hidden in Professional)
+- **Cycles vertically** (seamless loop of all frames); two wide frames visible (`aspect-ratio: 2/1`)
+- Copy aligns to the **top** of the strip
+- Respects `prefers-reduced-motion` (static first frames)
+- Images use greyscale + contrast treatment so the strip reads as booth pattern even when sources are color
 
-| File | Role |
-|------|------|
-| `images/compositionstaples.jpg` | Preferred source photo |
-| `images/compositionoxford.jpg` | Alternate if Staples proves too busy |
-| `public/textures/marble-cover.jpg` | Softened marble tile for **cover** |
-| `public/textures/binding-tape.jpg` | Header tape band |
-| `public/textures/marble-cover-oxford.jpg` | Softened Oxford alternate (not default) |
+## Palette
 
-Do **not** use the old generated `composition-notebook.png` speckles for the cover.
+| Role | Value |
+|------|--------|
+| Bg | `#050505` |
+| Surface | `#111111` |
+| Text | `#f2f0ea` |
+| Muted | `#9a9690` |
+| Accent | `#ffb020` |
+| Accent fg | `#050505` |
+| Border | `#1a1a1a` |
+| Focus | `#ffc44d` |
 
-## Components / classes
+## Parked
 
-- `fun-surface fun-surface--cover` — Home wrapper
-- `fun-surface fun-surface--open` — inner page wrapper
-- `.composition-label` — white ruled label cards on the cover
-- `.page-title--taped` — gold paper + clear tape strips (inner page H1 only)
+- Notebook / taped Notes labels → Notes later
+- Freeze-night indigo pass → superseded
+- Rejected: peach, flat charcoal+gold alone, speckled notebook everywhere, pink/lime/cyan neon
 
 ## Anti-patterns
 
-- Full-page intense marble behind long text
-- Lined paper as the only background for body copy
-- Stickers/polaroids instead of composition labels (unless user revisits)
+- Wide full-bleed multi-column photo walls as Fun identity
+- Multi-color neon accents
+- Putting the hero back in a glowing “Collections” card
 - Changing Professional to match Fun

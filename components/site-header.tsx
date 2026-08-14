@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { site } from "@/content/site";
+import type { ThemeId } from "@/themes";
 
-export function SiteHeader() {
+export function SiteHeader({ initialTheme }: { initialTheme: ThemeId }) {
   return (
     <header className="site-header">
       <div className="site-header__inner">
@@ -16,7 +17,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <ThemeToggle />
+        <ThemeToggle initialTheme={initialTheme} />
       </div>
     </header>
   );

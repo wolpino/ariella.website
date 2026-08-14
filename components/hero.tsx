@@ -1,24 +1,16 @@
 import Link from "next/link";
+import { PhotoStrip } from "@/components/photo-strip";
 import { site } from "@/content/site";
 
 export function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      <div className="composition-label composition-label--hero">
-        <p className="composition-label__brand">{site.name}</p>
-        <p className="composition-label__rule" aria-hidden="true" />
-        <h1 id="hero-heading" className="composition-label__title">
-          Composition book
+      <div className="hero__content">
+        <h1 id="hero-heading" className="hero__brand">
+          <span className="hero__title-pro">{site.tagline}</span>
+          <span className="hero__title-fun">{site.funHeading}</span>
         </h1>
-        <p className="composition-label__subtitle">
-          A hub for projects — creative and code
-        </p>
-        <div className="composition-label__lines" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <p className="composition-label__lede">{site.tagline}</p>
+        <p className="hero__sub-fun">{site.funTopics.join(" · ")}</p>
         <div className="hero__actions">
           <Link href="/projects" className="btn btn--primary">
             View projects
@@ -28,6 +20,7 @@ export function Hero() {
           </Link>
         </div>
       </div>
+      <PhotoStrip />
     </section>
   );
 }

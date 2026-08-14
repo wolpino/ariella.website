@@ -75,7 +75,7 @@ export default async function RootLayout({
       </head>
       <body>
         <ThemeProvider initialTheme={initialTheme}>
-          <SiteHeader />
+          <SiteHeader initialTheme={initialTheme} />
           <main className="site-main">{children}</main>
         </ThemeProvider>
       </body>

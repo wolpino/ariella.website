@@ -1,32 +1,31 @@
 import type { ThemeConfig } from "./types";
 
 /**
- * Expressive composition-notebook Fun theme — opt-in.
- * Cover vs open surfaces, binding-tape header, gold `#ecc85c` titles:
- * see docs/FUN-THEME.md
+ * Photobooth + pinball hybrid Fun theme — opt-in.
+ * Inky black frames, high-contrast greys, one amber glow. See docs/FUN-THEME.md
  */
 export const fun: ThemeConfig = {
   id: "fun",
   label: "Fun",
   colors: {
-    bg: "#141414",
-    fg: "#f3efe4",
-    muted: "#a39e90",
-    accent: "#ecc85c",
-    accentFg: "#141414",
-    border: "#3a3a3a",
-    surface: "#1e1e1e",
-    focus: "#fcfc30",
+    bg: "#050505",
+    fg: "#f2f0ea",
+    muted: "#9a9690",
+    accent: "#ffb020",
+    accentFg: "#050505",
+    border: "#1a1a1a",
+    surface: "#111111",
+    focus: "#ffc44d",
   },
   fonts: {
     display: "var(--font-display-fun)",
     body: "var(--font-body-fun)",
   },
   motion: {
-    duration: "280ms",
+    duration: "240ms",
   },
   radii: {
-    sm: "4px",
-    md: "10px",
+    sm: "2px",
+    md: "4px",
   },
 };

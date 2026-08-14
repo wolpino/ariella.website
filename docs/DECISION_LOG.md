@@ -96,4 +96,46 @@ Format:
   - **Gold/yellow paper with clear tape** (Wix Notes color `~#ecc85c`) = **page title headers only** on inner pages (like “Notes” on the muffin post), not on Home chrome.
   - Home modules = **composition white labels** (like the printed label on the cover), not stickers/polaroids.
   - Full lined-paper + heavy marble (Wix Notes post) is too intense / hard for text. **Lined paper can appear as an accent** on open pages, not as a full-page text surface.
-- **Implication:** See [docs/FUN-THEME.md](FUN-THEME.md). Keep Professional unchanged.
+- **Implication:** Superseded 2026-07-21 by Freeze night direction below. Notebook assets may return for Notes later.
+
+## 2026-07-21 — Fun = Freeze night (direction B)
+
+- **Q:** Next Fun direction after rejecting peach, flat charcoal+gold, speckled notebook, neon pink/lime/cyan, and horizontal notebook polish?
+- **A:** Direction **B — Summer twilight / The Freeze**. Push as close to **neon night** as possible while coloring stays reminiscent of the Freeze photo (deep indigo sky, warm streetlight yellow, sign-white, wet-pavement glow). Not the rejected pink/lime/cyan neon. Gold taped Notes labels stay Notes-only later, not Fun global chrome.
+- **Implication:** Superseded same day by hybrid below; Freeze pass was not close enough.
+
+## 2026-07-21 — Fun = photobooth + pinball hybrid
+
+- **Q:** Freeze night wasn’t close; Collections hero card disliked; pinball glow vs photobooth pattern?
+- **A:** **Hybrid.** Photobooth pattern (inky black, high-contrast greyscale framing, narrow vertical rhythm — not actual booth portraits as theme content) + one warm pinball-bulb amber accent. **Vertical** scrolling photo strip (not horizontal; Wix feels too wide). Use images from `images/` for now (resized into `public/fun-strip/`); swappable later. Remove Collections rectangle.
+- **Implication:** See [docs/FUN-THEME.md](FUN-THEME.md). Strip: `components/photo-strip.tsx` + `content/fun-strip.ts`. Professional unchanged.
+
+## 2026-08-13 — Name lives in the header, not the Home title
+
+- **Q:** Duplicate “Ariella Wolpin” in the header and as the Home title — which is more used?
+- **A:** The **header**. It appears on every page. The Home h1 only appeared on `/`. Wix also uses the name once, as the header brand (“Ari Wolpin”), with photos as the visual — not a second title.
+- **Implication:** Keep `site.name` in the header (home link). Home h1 is the tagline. Document title / metadata still use the full name.
+
+## 2026-08-13 — Home has no Featured block
+
+- **Q:** Keep the Featured projects section on Home?
+- **A:** No. Remove it. Projects stay on `/projects`.
+- **Implication:** Home is hero + Fun strip only.
+
+## 2026-08-13 — Fun strip cycles vertically again
+
+- **Q:** Static strip or moving?
+- **A:** Cycle / rotate vertically. Fun coloring stays.
+- **Implication:** Seamless looping track in `photo-strip.tsx`; `prefers-reduced-motion` keeps it still.
+
+## 2026-08-13 — Professional background: faded window glass
+
+- **Q:** Professional is too bright white. Photo (greyscale, faded) or Trial & Eclair patterned window?
+- **A:** Use this repo’s `images/kitchenwindow.jpg` — that **is** the patterned frosted glass. Trial & Eclair’s `window-fan-pattern.svg` is a line drawing of the same motif. Greyscale + faded overlay; slightly warmer paper color underneath.
+- **Implication:** Texture at `public/textures/window-fan.jpg`. Professional tokens a bit less white (`#e4dfd6` ground). Do not apply this to Fun.
+
+## 2026-08-13 — Fun Home heading matches Wix collections lockup
+
+- **Q:** Fun heading like the Wix site — “collections” or “a collection of collections”? Subtitle photography, web applications, plus what?
+- **A:** Fun Home h1 is **collections** (what Wix used under the name). Subtitle: photography · web applications · notes. Notes is the third Wix section and a planned page here. Professional keeps the recruiter tagline.
+- **Implication:** Copy in `content/site.ts` (`funHeading`, `funTopics`). Swap via CSS (`hero__title-fun` / `hero__title-pro`), not `if (fun)` in components. Easy to change the third topic if notes isn’t right.

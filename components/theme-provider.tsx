@@ -2,7 +2,6 @@
 
 import {
   createContext,
-  startTransition,
   useCallback,
   useContext,
   useEffect,
@@ -11,12 +10,12 @@ import {
   type ReactNode,
 } from "react";
 import {
-  DEFAULT_THEME,
-  THEME_COOKIE,
-  THEME_STORAGE_KEY,
-  isThemeId,
-  type ThemeId,
-} from "@/themes";
+  applyTheme,
+  getThemeSnapshot,
+  hydrateThemeStore,
+  subscribeTheme,
+} from "@/lib/theme-store";
+import { DEFAULT_THEME, type ThemeId } from "@/themes";
 
 type ThemeContextValue = {
   theme: ThemeId;
@@ -25,17 +24,6 @@ type ThemeContextValue = {
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
-
-function persistTheme(theme: ThemeId) {
-  document.documentElement.setAttribute("data-theme", theme);
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  } catch {
-    /* ignore */
-  }
-  const maxAge = 60 * 60 * 24 * 365;
-  document.cookie = `${THEME_COOKIE}=${encodeURIComponent(theme)}; path=/; max-age=${maxAge}; samesite=lax`;
-}
 
 export function ThemeProvider({
   children,
@@ -46,23 +34,21 @@ export function ThemeProvider({
 }) {
   const [theme, setThemeState] = useState<ThemeId>(initialTheme);
 
-  // Align React with the pre-paint script (cookie / localStorage) without
-  // overwriting a stored Fun preference on first load.
   useEffect(() => {
-    const attr = document.documentElement.getAttribute("data-theme");
-    if (isThemeId(attr) && attr !== initialTheme) {
-      startTransition(() => setThemeState(attr));
-    }
+    hydrateThemeStore(initialTheme);
+    setThemeState(getThemeSnapshot());
+    return subscribeTheme(() => {
+      setThemeState(getThemeSnapshot());
+    });
   }, [initialTheme]);
 
   const setTheme = useCallback((next: ThemeId) => {
-    setThemeState(next);
-    persistTheme(next);
+    applyTheme(next);
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === "professional" ? "fun" : "professional");
-  }, [setTheme, theme]);
+    applyTheme(theme === "professional" ? "fun" : "professional");
+  }, [theme]);
 
   const value = useMemo(
     () => ({ theme, setTheme, toggleTheme }),
