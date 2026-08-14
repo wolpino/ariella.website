@@ -2,9 +2,9 @@
 
 - **Current:** PR3 deploy — Vercel + `ariella.website`
 - **Branch:** `feat/deploy` (from `feat/mvp-pages` after PR2 sign-off)
-- **Blocked on:** GitHub remote / Vercel login if CLI auth fails
+- **Blocked on:** `vercel login` (CLI token invalid) + first production deploy + domain DNS
 - **Last verified:** PR2 MVP pages (2026-08-13)
-- **Next:** Production deploy + domain → then PR4 About
+- **Next:** You log into Vercel → production deploy → attach `ariella.website`
 
 ## Note on main
 
