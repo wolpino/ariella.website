@@ -55,3 +55,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/fun-notebook-home`
 - **Files owned:** `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `package.json`
 - **Note:** Lint, build, and `npm run test:e2e` passed. Fun `/` is the high-fidelity cover under the site header. No cookie and Professional still show the recruiter line. Editions mark stays off until NF4. Next prompt is `docs/prompts/NF4.md`.
+
+## 2026-10-02 14:17 — NF4 editions archive
+
+- **Status:** in_progress
+- **Branch:** `feat/notebook-editions`
+- **Files owned:** `app/editions/`, `components/editions/`, `editions/`, `public/editions/`, `components/home-view.tsx`, `e2e/regression.spec.ts`
+- **Note:** Copy the notebook edition catalog and routes 0–2 under the existing site header. Frozen covers do not follow the live cover variant.
