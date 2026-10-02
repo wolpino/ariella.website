@@ -9,7 +9,7 @@
 | NF2 | done | `test/notebook-fun-regression` | Playwright regression tests that pass today, plus CI | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | https://github.com/wolpino/ariella.website/pull/2 |
 | NF3 | done | `feat/fun-notebook-home` | Fun `/` is the notebook under the site header | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | https://github.com/wolpino/ariella.website/pull/3 |
 | NF4 | done | `feat/notebook-editions` | `/editions` and editions 0–2 with the site header | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | https://github.com/wolpino/ariella.website/pull/4 |
-| NF5 | in_progress | `feat/notebook-studio-404` | `/studio` without the site header; neutral 404 | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | — |
+| NF5 | done | `feat/notebook-studio-404` | `/studio` without the site header; neutral 404 | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | — |
 | NF6 | todo | `chore/notebook-fun-preview` | Preview URL only. Do not attach the domain | [docs/NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md) | — |
 | PR4 | todo | `feat/about` | About Résumé/Story + richer projects hub | `docs/PHASE-2a-about.md` | — |
 | PR5 | todo | `feat/collections` | `CollectionStack` + lightbox + 1–2 collections | `docs/PHASE-2b-collections.md` | — |

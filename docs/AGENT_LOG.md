@@ -76,3 +76,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/notebook-studio-404`
 - **Files owned:** `app/layout.tsx`, `app/(site)/layout.tsx`, `app/(site)/page.tsx`, `app/(site)/projects/page.tsx`, `app/(site)/contact/page.tsx`, `app/(site)/editions/`, `app/studio/`, `app/not-found.tsx`, `app/globals.css`
 - **Note:** Move the site header into a route group. `/studio` keeps its toolbar and stays outside that group. Unknown URLs get a neutral 404.
+
+## 2026-10-02 14:34 — NF5 studio and neutral 404
+
+- **Status:** done
+- **Branch:** `feat/notebook-studio-404`
+- **Files owned:** `app/layout.tsx`, `app/(site)/layout.tsx`, `app/(site)/page.tsx`, `app/(site)/projects/page.tsx`, `app/(site)/contact/page.tsx`, `app/(site)/editions/`, `app/studio/`, `app/not-found.tsx`, `app/globals.css`, `e2e/regression.spec.ts`
+- **Note:** Lint, build, and `npm run test:e2e` passed (19 tests). `/studio` shows Cover treatments, is noindex, and has no site header. Unknown URLs show Page not found. Fun home and editions 1–2 stay one viewport under the header. Next prompt is `docs/prompts/NF6.md`.
