@@ -139,3 +139,20 @@ Format:
 - **Q:** Fun heading like the Wix site — “collections” or “a collection of collections”? Subtitle photography, web applications, plus what?
 - **A:** Fun Home h1 is **collections** (what Wix used under the name). Subtitle: photography · web applications · notes. Notes is the third Wix section and a planned page here. Professional keeps the recruiter tagline.
 - **Implication:** Copy in `content/site.ts` (`funHeading`, `funTopics`). Swap via CSS (`hero__title-fun` / `hero__title-pro`), not `if (fun)` in components. Easy to change the third topic if notes isn’t right.
+
+## 2026-10-02 — Fun home is the notebook; domain stays put
+
+Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08-13 “collections” heading entry, and the parked-notebook notes in [FUN-THEME.md](FUN-THEME.md). Those entries stay as history. Execution plan: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+
+- **Q:** Where does the composition notebook live, and what does `ariella.website` serve?
+- **A:**
+  - Professional is still the default. No `ariella-theme` cookie means `/` is the current professional hero (`Design, photography, and code`).
+  - Fun on `/` keeps `SiteHeader` (Ariella Wolpin, Home, Projects, Contact, Professional / Fun) and the page under it is the high-fidelity notebook cover from local `/Users/ari/codes/ariellawebsite` at `48381c6`. Cover label stays `Ariella's Website`.
+  - `/projects` and `/contact` stay as they are in both themes.
+  - `/editions`, `/editions/0`, `/editions/1`, and `/editions/2` move with the notebook and keep the site header. Editions stay frozen and do not follow the live cover variant.
+  - `/studio` moves, stays `noindex`, keeps its own toolbar, and does not show the site header.
+  - The site 404 is neutral. Do not use `This page isn't in the notebook`.
+  - Home may switch component trees by theme. Projects and Contact may not.
+  - Hosting stays Vercel. Porkbun remains the registrar. Nameservers stay on Vercel DNS. Do not create a Render service. Do not attach `ariella.website` or `www` in this effort. Stop at a preview URL. `photos.ariella.website` stays on the `my_first_website` project.
+  - Copy from the local notebook commit above. GitHub `wolpino/ariellawebsite` `main` is behind that commit.
+- **Implication:** Follow [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md). Do not “finish” old PR3 by attaching the domain. Do not restore the photobooth as the Fun home.

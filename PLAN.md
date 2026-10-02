@@ -4,18 +4,20 @@ Living build plan. Update when scope changes. PR checklist: [docs/PULL_REQUESTS.
 
 ## Goal
 
-Single Next.js (TypeScript) app on Vercel. **Professional** default theme; **Fun** opt-in (Wix-inspired). Hub for projects; satellites linked out.
+Single Next.js (TypeScript) app on Vercel. **Professional** default theme. **Fun home** is the composition notebook under the existing header. Hub for projects; satellites linked out.
 
-**MVP (first live):** Home, Projects, Contact + theme toggle (Option A).  
-**Goal:** Recruiter portfolio + Wix-like Fun visuals (Option B+D), then notes + more collections.
+**Current work:** port the notebook, editions, and studio, with tests, and stop at a Vercel preview. Full instructions: [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md).
+
+**Later:** About, collections, notes. Attaching `ariella.website` is not part of the current work.
 
 ## PR map
 
 | PR | Ships |
 |----|--------|
-| **PR1** | Docs spine; SPEC; Next scaffold; theme config + toggle; layout shell |
-| **PR2** | Home / Projects / Contact; Fun styling; content files; quality bar |
-| **PR3** | Vercel + domain |
+| **PR1** | Done. Docs spine; SPEC; Next scaffold; theme config + toggle; layout shell |
+| **PR2** | Done. Home / Projects / Contact; Fun styling; content files; quality bar |
+| **PR3** | Deferred. Do not attach the domain while the notebook port is in progress |
+| **NF1–NF6** | Notebook Fun port. See [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md) and [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) |
 | **PR4** | About (Résumé/Story); richer projects hub |
 | **PR5** | `CollectionStack` + lightbox; 1–2 collections |
 | **PR6** | Notes scaffold; more collections |
@@ -36,12 +38,11 @@ Workflow: implement chunk → small commits → you verify → fixes → write `
 // themes/professional.ts & themes/fun.ts → CSS variables
 ```
 
-Components use `var(--*)` only — no `if (fun)` in UI logic. Persist preference (cookie + localStorage).
+Projects and Contact use `var(--*)` only. `/` may render a different component tree for Fun (the notebook). Persist preference (cookie + localStorage). Default remains `professional`.
 
-**Fun metaphor:** photobooth + pinball hybrid — see [docs/FUN-THEME.md](docs/FUN-THEME.md).
-- Inky black framing, high-contrast greys, one amber glow
-- Home: **collections** + topic lede + narrow **vertical** cycling photo strip
-- Notebook / Freeze-night / multi-neon parked or rejected
+**Fun home:** high-fidelity composition notebook under `SiteHeader`. See [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md).
+
+**Projects and Contact in Fun:** still the photobooth + pinball styling in [docs/FUN-THEME.md](docs/FUN-THEME.md). That metaphor is no longer the home page.
 
 ## Photography
 

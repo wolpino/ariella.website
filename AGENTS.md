@@ -8,17 +8,20 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 
 ## Read first (every session)
 
-1. [PLAN.md](PLAN.md) — current phases and quality bar
-2. [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) — which PR chunk is next / in progress
-3. [docs/DECISION_LOG.md](docs/DECISION_LOG.md) — prior Q&A (do not re-ask settled questions)
-4. [STATUS.md](STATUS.md) — current focus / blockers
-5. [docs/FUN-THEME.md](docs/FUN-THEME.md) — when touching Fun visuals
-6. Latest `docs/PHASE-*.md` if continuing after a shipped chunk
+1. [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md) — current port. If this disagrees with older Fun docs, the plan wins
+2. [docs/AGENT_LOG.md](docs/AGENT_LOG.md) — claim a step before starting. Skip steps already `in_progress`
+3. [STATUS.md](STATUS.md) — current focus
+4. [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) — which PR chunk is next
+5. [docs/DECISION_LOG.md](docs/DECISION_LOG.md) — prior Q&A. The 2026-10-02 entry supersedes older Fun-home decisions
+6. [PLAN.md](PLAN.md) — longer-term phases
+7. [docs/FUN-THEME.md](docs/FUN-THEME.md) — history, and the styling that still applies to Projects and Contact
+8. Latest `docs/PHASE-*.md` if continuing after a shipped chunk
 
 ## Workflow
 
 - One PR chunk at a time (see `docs/PULL_REQUESTS.md`)
 - Small focused commits
+- Before starting an NF step, append an `in_progress` row to `docs/AGENT_LOG.md`. Append `done` or `blocked` when you stop
 - Stop after the chunk for human verify; then fixes; then write phase docs
 - Update `PLAN.md` if scope/reality changes
 - Update `STATUS.md` and `docs/PULL_REQUESTS.md` when starting/finishing a chunk
@@ -31,7 +34,8 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 ## Stack & constraints
 
 - Next.js App Router + TypeScript; single app; no monorepo for now
-- Professional theme default; Fun is opt-in (theme config in `themes/`; Fun layout rules in `docs/FUN-THEME.md`)
+- Professional theme default. Fun home is the notebook in `docs/NOTEBOOK-FUN-PLAN.md`. Projects and Contact stay on theme CSS variables
+- Do not attach `ariella.website` or change Porkbun, Render, or `photos.ariella.website` as part of the notebook port
 - Non-negotiables: mobile, a11y, image performance, theme reliability, recruiter clarity
 - Satellites stay linked out (`photos.ariella.website`, Trial & Eclair later)
 - No CMS, no Turborepo, no public `/engineering` docs site for v1

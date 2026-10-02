@@ -1,6 +1,8 @@
 # Fun theme — photobooth + pinball hybrid
 
-Source of truth for Fun presentation. Professional stays restrained and separate. Decisions: [DECISION_LOG.md](DECISION_LOG.md).
+**Superseded for the Fun home on 2026-10-02.** The Fun home is the composition notebook under the existing site header. Projects and Contact still use the styling below until a later decision says otherwise. Source of truth for the port: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md). Decision: [DECISION_LOG.md](DECISION_LOG.md) (2026-10-02).
+
+The rest of this file is history. Do not put the photobooth strip back on `/`.
 
 ## Metaphor
 
