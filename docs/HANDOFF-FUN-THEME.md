@@ -1,6 +1,8 @@
 # Handoff: redesign Fun theme for ariella.website
 
-**Closed 2026-08-13** with PR2. Fun is the photobooth + pinball hybrid in [FUN-THEME.md](FUN-THEME.md). Kept as history of rejected directions — do not treat the “your job” section as current work.
+**Archive. Closed 2026-08-13.** Do not follow this file. The “Your job” section is not current work. The notebook rejection here does not apply to the 2026-10-02 port. Current instructions: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+
+The paragraph below is the old close note, kept so the history is readable: Fun was the photobooth + pinball hybrid in [FUN-THEME.md](FUN-THEME.md).
 
 ### Context
 You’re continuing **PR2** (`feat/mvp-pages`) on the personal site **ariella.website**. Stack: Next.js App Router + TypeScript. Dual theme: **Professional** (default, keep as-is) and **Fun** (opt-in).

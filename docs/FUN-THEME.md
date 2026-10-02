@@ -4,6 +4,10 @@
 
 The rest of this file is history. Do not put the photobooth strip back on `/`.
 
+## Archive
+
+Historical Fun-home styling. Not instructions for `/`. Projects and Contact may still use these tokens until a later decision.
+
 ## Metaphor
 
 **Inky photobooth structure** + **one warm pinball glow**. Narrow vertical rhythm (not a wide Wix triptych). Strip photos are placeholders and can swap later.

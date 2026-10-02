@@ -2,6 +2,8 @@
 
 Append-only. Agents: when the user answers a clarifying question, add an entry before continuing.
 
+**Current Fun home and deploy decisions are the 2026-10-02 entry at the bottom.** Entries before that are history. Do not revive the photobooth as the Fun home, and do not attach the domain, from an older entry.
+
 Format:
 
 ```markdown

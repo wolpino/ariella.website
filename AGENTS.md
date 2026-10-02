@@ -22,7 +22,9 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 - One PR chunk at a time (see `docs/PULL_REQUESTS.md`)
 - Small focused commits
 - Before starting an NF step, append an `in_progress` row to `docs/AGENT_LOG.md`. Append `done` or `blocked` when you stop
-- Stop after the chunk for human verify; then fixes; then write phase docs
+- NF2 through NF5 do not wait for a person to approve. NF6 stops at the preview URL and does not attach the domain
+- When the context window is getting full, write the next agent prompt in `docs/prompts/` before stopping. Match the detail in `docs/prompts/NF2.md`
+- Older phase docs, `docs/HANDOFF-FUN-THEME.md`, and the README deploy archive are history. Do not execute them
 - Update `PLAN.md` if scope/reality changes
 - Update `STATUS.md` and `docs/PULL_REQUESTS.md` when starting/finishing a chunk
 

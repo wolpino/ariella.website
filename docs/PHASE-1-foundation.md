@@ -1,5 +1,7 @@
 # Phase 1 — Foundation (PR1)
 
+**Archive.** This records what PR1 shipped. It is not the current task. Current work: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+
 **Branch:** `feat/foundation`  
 **Status:** verified by human 2026-07-20  
 **Commits:** docs spine + Next scaffold with theme toggle
