@@ -205,3 +205,62 @@ test("fun home versions mark links to the editions archive", async ({
   await expect(versions).toBeVisible();
   await expect(versions).toHaveAttribute("href", "/editions");
 });
+
+test("studio shows cover treatments and is not indexed", async ({ page }) => {
+  await page.goto("/studio");
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Cover treatments" }),
+  ).toBeVisible();
+  await expect(page.getByText("Studio · not indexed")).toBeVisible();
+  await expect(page.locator("header.site-header")).toHaveCount(0);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    /noindex/,
+  );
+});
+
+test("an unknown url shows a neutral not-found page", async ({ page }) => {
+  await page.goto("/not-a-page");
+  await expect(
+    page.getByRole("heading", { name: "Page not found" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("This page isn't in the notebook"),
+  ).toHaveCount(0);
+  await expect(page.locator("header.site-header")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Back home" })).toHaveAttribute(
+    "href",
+    "/",
+  );
+});
+
+test("fun home resume query opens the resume dialog", async ({
+  page,
+  context,
+  baseURL,
+}) => {
+  await context.addCookies([
+    {
+      name: "ariella-theme",
+      value: "fun",
+      url: baseURL ?? "http://127.0.0.1:3000",
+    },
+  ]);
+  await page.goto("/?resume=1");
+  const dialog = page.getByRole("dialog", { name: "Resume" });
+  await expect(dialog).toBeVisible();
+  await expect(
+    dialog.getByRole("link", { name: "Download PDF" }),
+  ).toBeVisible();
+});
+
+for (const asset of [
+  "/resume.pdf",
+  "/textures/notebook-marble.jpg",
+  "/editions/shelby.jpg",
+]) {
+  test(`${asset} returns 200`, async ({ request }) => {
+    const response = await request.get(asset);
+    expect(response.status()).toBe(200);
+  });
+}

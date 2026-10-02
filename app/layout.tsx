@@ -13,7 +13,6 @@ import {
   Special_Elite,
   Walter_Turncoat,
 } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getThemeInitScript } from "@/lib/theme-script";
 import { isThemeId, type ThemeId } from "@/themes";
@@ -128,10 +127,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider initialTheme={initialTheme}>
-          <SiteHeader initialTheme={initialTheme} />
-          <main className="site-main">{children}</main>
-        </ThemeProvider>
+        <ThemeProvider initialTheme={initialTheme}>{children}</ThemeProvider>
       </body>
     </html>
   );
