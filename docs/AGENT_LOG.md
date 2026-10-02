@@ -62,3 +62,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/notebook-editions`
 - **Files owned:** `app/editions/`, `components/editions/`, `editions/`, `public/editions/`, `components/home-view.tsx`, `e2e/regression.spec.ts`
 - **Note:** Copy the notebook edition catalog and routes 0–2 under the existing site header. Frozen covers do not follow the live cover variant.
+
+## 2026-10-02 14:25 — NF4 editions archive
+
+- **Status:** done
+- **Branch:** `feat/notebook-editions`
+- **Files owned:** `app/editions/`, `components/editions/`, `editions/`, `public/editions/`, `components/home-view.tsx`, `e2e/regression.spec.ts`
+- **Note:** Lint, build, and `npm run test:e2e` passed (13 tests). `/editions` and editions 0–2 keep the site header. Edition 1 stays stylized and edition 2 stays high-fidelity. Fun home Versions tape links to `/editions`. Next prompt is `docs/prompts/NF5.md`.
