@@ -110,13 +110,14 @@ body {
   width: 100%;
 }
 
-/* The notebook fills the space under the sticky header. */
-html:has(.desk),
-html:has(.desk) body {
+/* The notebook fills the space under the sticky header.
+   Studio renders .desk outside .site-main and sizes its own toolbar. */
+html:has(.site-main .desk),
+html:has(.site-main .desk) body {
   height: 100dvh;
 }
 
-html:has(.desk) body {
+html:has(.site-main .desk) body {
   max-height: 100dvh;
   overflow: hidden;
 }

@@ -69,3 +69,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/notebook-editions`
 - **Files owned:** `app/editions/`, `components/editions/`, `editions/`, `public/editions/`, `components/home-view.tsx`, `e2e/regression.spec.ts`
 - **Note:** Lint, build, and `npm run test:e2e` passed (13 tests). `/editions` and editions 0–2 keep the site header. Edition 1 stays stylized and edition 2 stays high-fidelity. Fun home Versions tape links to `/editions`. Next prompt is `docs/prompts/NF5.md`.
+
+## 2026-10-02 14:29 — NF5 studio and neutral 404
+
+- **Status:** in_progress
+- **Branch:** `feat/notebook-studio-404`
+- **Files owned:** `app/layout.tsx`, `app/(site)/layout.tsx`, `app/(site)/page.tsx`, `app/(site)/projects/page.tsx`, `app/(site)/contact/page.tsx`, `app/(site)/editions/`, `app/studio/`, `app/not-found.tsx`, `app/globals.css`
+- **Note:** Move the site header into a route group. `/studio` keeps its toolbar and stays outside that group. Unknown URLs get a neutral 404.
