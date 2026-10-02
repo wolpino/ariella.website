@@ -48,3 +48,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/fun-notebook-home`
 - **Files owned:** `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `package.json`
 - **Note:** Copy the high-fidelity notebook cover under the site header for Fun `/`. Professional home stays the current hero.
+
+## 2026-10-02 12:20 — NF3 Fun home is the notebook
+
+- **Status:** done
+- **Branch:** `feat/fun-notebook-home`
+- **Files owned:** `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `package.json`
+- **Note:** Lint, build, and `npm run test:e2e` passed. Fun `/` is the high-fidelity cover under the site header. No cookie and Professional still show the recruiter line. Editions mark stays off until NF4. Next prompt is `docs/prompts/NF4.md`.

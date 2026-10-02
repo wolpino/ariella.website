@@ -62,3 +62,85 @@ test("clicking Professional and Fun keeps the header", async ({ page }) => {
   await page.getByRole("button", { name: "Fun" }).click();
   await expectHeader(page);
 });
+
+test("home without a theme cookie does not show the notebook sticker", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByText("Design, photography, and code")).toBeVisible();
+  await expect(page.getByText("This website", { exact: true })).toHaveCount(0);
+});
+
+test("professional cookie keeps the recruiter line and hides the sticker", async ({
+  page,
+  context,
+  baseURL,
+}) => {
+  await context.addCookies([
+    {
+      name: "ariella-theme",
+      value: "professional",
+      url: baseURL ?? "http://127.0.0.1:3000",
+    },
+  ]);
+  await page.goto("/");
+  await expect(page.getByText("Design, photography, and code")).toBeVisible();
+  await expect(page.getByText("This website", { exact: true })).toHaveCount(0);
+  await expectHeader(page);
+});
+
+test("fun cookie shows the notebook sticker under the header", async ({
+  page,
+  context,
+  baseURL,
+}) => {
+  await context.addCookies([
+    {
+      name: "ariella-theme",
+      value: "fun",
+      url: baseURL ?? "http://127.0.0.1:3000",
+    },
+  ]);
+  await page.goto("/");
+  await expectHeader(page);
+  await expect(page.getByText("This website", { exact: true })).toBeVisible();
+  await expect(page.getByText("is a work in", { exact: true })).toBeVisible();
+  await expect(page.getByText("progress!", { exact: true })).toBeVisible();
+  await expect(page.getByText("Design, photography, and code")).toHaveCount(0);
+
+  const header = page.getByRole("banner");
+  const desk = page.locator(".desk");
+  const headerBox = await header.boundingBox();
+  const deskBox = await desk.boundingBox();
+  const innerHeight = await page.evaluate(() => window.innerHeight);
+  expect(headerBox).not.toBeNull();
+  expect(deskBox).not.toBeNull();
+  const expected = innerHeight - headerBox!.height;
+  expect(Math.abs(deskBox!.height - expected)).toBeLessThanOrEqual(2);
+  expect(deskBox!.y + deskBox!.height).toBeLessThanOrEqual(innerHeight + 2);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  const narrowHeader = await header.boundingBox();
+  const narrowDesk = await desk.boundingBox();
+  const narrowInner = await page.evaluate(() => window.innerHeight);
+  expect(narrowHeader).not.toBeNull();
+  expect(narrowDesk).not.toBeNull();
+  const narrowExpected = narrowInner - narrowHeader!.height;
+  expect(Math.abs(narrowDesk!.height - narrowExpected)).toBeLessThanOrEqual(2);
+});
+
+test("clicking Fun, reloading, then Professional switches the home", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Fun" }).click();
+  await page.reload();
+  await expect(page.getByText("This website", { exact: true })).toBeVisible();
+  await expect(page.getByText("is a work in", { exact: true })).toBeVisible();
+  await expect(page.getByText("progress!", { exact: true })).toBeVisible();
+
+  await page.getByRole("button", { name: "Professional" }).click();
+  await expect(page.getByText("Design, photography, and code")).toBeVisible();
+  await expect(page.getByText("This website", { exact: true })).toHaveCount(0);
+  await expectHeader(page);
+});
