@@ -8,7 +8,7 @@ export function HomeView() {
   const { theme } = useTheme();
 
   if (theme === "fun") {
-    return <CoverScreen variant="high-fidelity" showEditionsMark={false} />;
+    return <CoverScreen variant="high-fidelity" />;
   }
 
   return (
