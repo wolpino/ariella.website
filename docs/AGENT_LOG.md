@@ -27,3 +27,17 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `docs/notebook-fun-plan`
 - **Files owned:** `README.md`, `SPEC.md`, `AGENTS.md`, `STATUS.md`, `docs/PHASE-1-mvp.md`, `docs/PHASE-1-deploy.md`, `docs/HANDOFF-FUN-THEME.md`, `docs/FUN-THEME.md`, `docs/DECISION_LOG.md`, `docs/prompts/NF2.md`, `images/README.md`, `.cursor/permissions.json`
 - **Note:** Stale Fun-home and domain-attach instructions are marked archive. Next agent prompt is `docs/prompts/NF2.md`.
+
+## 2026-10-02 11:50 — NF2 regression tests
+
+- **Status:** in_progress
+- **Branch:** `test/notebook-fun-regression`
+- **Files owned:** `package.json`, `package-lock.json`, `playwright.config.ts`, `e2e/regression.spec.ts`, `.nvmrc`, `.github/workflows/ci.yml`, `.gitignore`
+- **Note:** Playwright and CI for the current site. Fun home stays the photobooth. No notebook port.
+
+## 2026-10-02 12:05 — NF2 regression tests
+
+- **Status:** done
+- **Branch:** `test/notebook-fun-regression`
+- **Files owned:** `package.json`, `package-lock.json`, `playwright.config.ts`, `e2e/regression.spec.ts`, `.nvmrc`, `.github/workflows/ci.yml`, `.gitignore`, `components/theme-provider.tsx`, `components/theme-toggle.tsx`
+- **Note:** Lint, build, and `npm run test:e2e` passed locally. CI runs those on pull requests. Theme-sync setState stays, with an eslint exemption, so lint is green. Fun home is still the photobooth. Next prompt is `docs/prompts/NF3.md`.
