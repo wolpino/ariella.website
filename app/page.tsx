@@ -1,9 +1,5 @@
-import { Hero } from "@/components/hero";
+import { HomeView } from "@/components/home-view";
 
 export default function HomePage() {
-  return (
-    <div className="fun-surface fun-surface--cover">
-      <Hero />
-    </div>
-  );
+  return <HomeView />;
 }

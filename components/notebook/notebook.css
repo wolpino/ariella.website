@@ -1,6 +1,9 @@
 .desk {
-  min-height: 100dvh;
-  min-height: 100svh;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
   display: grid;
   place-items: center;
   padding: 0;
@@ -28,8 +31,8 @@
 .notebook {
   position: relative;
   width: 100%;
-  height: 100dvh;
-  height: 100svh;
+  height: 100%;
+  max-height: 100%;
   overflow: hidden;
   background: #111;
   isolation: isolate;
@@ -55,12 +58,8 @@
 }
 
 .desk[data-cover="high-fidelity"][data-layout="page"] {
-  --notebook-avail-h: min(
-    88dvh,
-    860px,
-    calc(100dvh - 2 * var(--desk-pad)),
-    calc((100vw - 2 * var(--desk-pad)) * 4 / 3)
-  );
+  container-type: size;
+  --notebook-avail-h: min(860px, 100cqh, calc(100cqw * 4 / 3));
 }
 
 .desk[data-cover="high-fidelity"][data-layout="page"] .notebook-stage {
@@ -175,10 +174,20 @@
   width: min(84%, 26.5rem);
 }
 
-.composition-label {
+.desk[data-cover] .composition-label {
   position: relative;
+  display: block;
   width: 100%;
+  max-width: none;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: #111;
+  box-shadow: none;
+  transform: none;
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.28));
 }
 
@@ -575,7 +584,8 @@
 
   .notebook {
     width: auto;
-    height: min(92dvh, 900px);
+    height: 100%;
+    max-height: 100%;
     aspect-ratio: 3 / 4;
     border-radius: 3px 14px 14px 3px;
     box-shadow:

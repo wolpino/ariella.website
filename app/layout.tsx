@@ -5,6 +5,13 @@ import {
   Source_Sans_3,
   Syne,
   DM_Sans,
+  Caveat,
+  Geist,
+  Permanent_Marker,
+  Sofia_Sans_Condensed,
+  Source_Serif_4,
+  Special_Elite,
+  Walter_Turncoat,
 } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -36,6 +43,46 @@ const bodyFun = DM_Sans({
   display: "swap",
 });
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const typewriter = Special_Elite({
+  weight: "400",
+  variable: "--font-typewriter",
+  subsets: ["latin"],
+});
+
+const hand = Caveat({
+  variable: "--font-hand",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const marker = Permanent_Marker({
+  weight: "400",
+  variable: "--font-marker",
+  subsets: ["latin"],
+});
+
+const pen = Walter_Turncoat({
+  weight: "400",
+  variable: "--font-pen",
+  subsets: ["latin"],
+});
+
+const serif = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+});
+
+const dymo = Sofia_Sans_Condensed({
+  weight: "800",
+  variable: "--font-dymo",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Ariella Wolpin",
@@ -59,6 +106,13 @@ export default async function RootLayout({
     bodyProfessional.variable,
     displayFun.variable,
     bodyFun.variable,
+    geistSans.variable,
+    typewriter.variable,
+    hand.variable,
+    marker.variable,
+    pen.variable,
+    serif.variable,
+    dymo.variable,
   ].join(" ");
 
   return (
