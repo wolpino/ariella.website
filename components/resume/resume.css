@@ -1,0 +1,222 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.resume-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(17, 17, 17, 0.62);
+}
+
+.resume-dialog {
+  --resume-paper-width: 42rem;
+  --resume-paper-height: 11in;
+  position: fixed;
+  z-index: 70;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: min(var(--resume-paper-width), calc(100vw - 2.5rem));
+  height: min(90dvh, var(--resume-paper-height), calc(100dvh - 2.5rem));
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+  outline: none;
+}
+
+.resume-dialog:focus-visible {
+  outline: 2px solid #c23b22;
+  outline-offset: 3px;
+}
+
+.resume-actions {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.7rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.resume-icon-button {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: #111;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.resume-icon-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.resume-icon-button:hover {
+  color: #333;
+}
+
+.resume-icon-button:focus-visible {
+  outline: 2px solid #c23b22;
+  outline-offset: 3px;
+}
+
+.resume-body {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  overflow: auto;
+  background: #fff;
+}
+
+.resume-stage {
+  width: 100%;
+}
+
+.resume-paper-slot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resume-paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--resume-paper-width);
+  min-height: var(--resume-paper-height);
+  margin: 0;
+  transform-origin: top left;
+}
+
+.resume-page {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--resume-paper-height);
+  margin: 0;
+  padding: 1.6rem 1.7rem 1.8rem;
+  font-family: var(--font-serif), "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 1.38;
+}
+
+.resume-name {
+  margin: 0 0 0.3rem;
+  text-align: center;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-contact {
+  margin: 0 0 0.85rem;
+  text-align: center;
+}
+
+.resume-contact a,
+.resume-job-title a {
+  color: #1155cc;
+  text-underline-offset: 0.12em;
+}
+
+.resume-summary {
+  margin: 0 0 0.95rem;
+  font-style: italic;
+  text-align: justify;
+}
+
+.resume-page h2 {
+  margin: 0.85rem 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resume-skill {
+  margin: 0 0 0.15rem;
+}
+
+.resume-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.resume-job {
+  margin: 0 0 0.7rem;
+}
+
+.resume-job-title,
+.resume-job-dates,
+.resume-job-blurb {
+  margin: 0;
+}
+
+.resume-job-title,
+.resume-job-dates {
+  font-weight: 700;
+}
+
+.resume-job-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.resume-job-dates {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-style: italic;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.resume-job-blurb {
+  font-style: italic;
+}
+
+.resume-job ul {
+  margin: 0.12rem 0 0;
+  padding-left: 1.15rem;
+  list-style-type: square;
+}
+
+.resume-job li + li {
+  margin-top: 0.12rem;
+}
+
+.resume-interests {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-overlay,
+  .resume-dialog {
+    animation: none;
+  }
+}

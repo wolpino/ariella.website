@@ -110,6 +110,23 @@ body {
   width: 100%;
 }
 
+/* The notebook fills the space under the sticky header. */
+html:has(.desk),
+html:has(.desk) body {
+  height: 100dvh;
+}
+
+html:has(.desk) body {
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+.site-main:has(.desk) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 /* Header */
 
 .site-header {

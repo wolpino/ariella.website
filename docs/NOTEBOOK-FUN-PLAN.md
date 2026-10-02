@@ -2,7 +2,7 @@
 
 Current build. Older Fun directions in [FUN-THEME.md](FUN-THEME.md) and earlier [DECISION_LOG.md](DECISION_LOG.md) entries are history. If they disagree with this file, this file wins.
 
-Agent claims: [AGENT_LOG.md](AGENT_LOG.md). PR table: [PULL_REQUESTS.md](PULL_REQUESTS.md). Next prompt: [prompts/NF3.md](prompts/NF3.md).
+Agent claims: [AGENT_LOG.md](AGENT_LOG.md). PR table: [PULL_REQUESTS.md](PULL_REQUESTS.md). Next prompt: [prompts/NF4.md](prompts/NF4.md).
 
 ## Outcome
 
