@@ -41,3 +41,10 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `test/notebook-fun-regression`
 - **Files owned:** `package.json`, `package-lock.json`, `playwright.config.ts`, `e2e/regression.spec.ts`, `.nvmrc`, `.github/workflows/ci.yml`, `.gitignore`, `components/theme-provider.tsx`, `components/theme-toggle.tsx`
 - **Note:** Lint, build, and `npm run test:e2e` passed locally. CI runs those on pull requests. Theme-sync setState stays, with an eslint exemption, so lint is green. Fun home is still the photobooth. Next prompt is `docs/prompts/NF3.md`.
+
+## 2026-10-02 12:11 — NF3 Fun home is the notebook
+
+- **Status:** in_progress
+- **Branch:** `feat/fun-notebook-home`
+- **Files owned:** `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `package.json`
+- **Note:** Copy the high-fidelity notebook cover under the site header for Fun `/`. Professional home stays the current hero.
