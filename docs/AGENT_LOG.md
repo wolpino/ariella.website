@@ -83,3 +83,17 @@ Read this file before starting a step. If that step is `in_progress`, do not sta
 - **Branch:** `feat/notebook-studio-404`
 - **Files owned:** `app/layout.tsx`, `app/(site)/layout.tsx`, `app/(site)/page.tsx`, `app/(site)/projects/page.tsx`, `app/(site)/contact/page.tsx`, `app/(site)/editions/`, `app/studio/`, `app/not-found.tsx`, `app/globals.css`, `e2e/regression.spec.ts`
 - **Note:** Lint, build, and `npm run test:e2e` passed (19 tests). `/studio` shows Cover treatments, is noindex, and has no site header. Unknown URLs show Page not found. Fun home and editions 1–2 stay one viewport under the header. Next prompt is `docs/prompts/NF6.md`.
+
+## 2026-10-20 11:16 — NF6 preview only
+
+- **Status:** in_progress
+- **Branch:** `chore/notebook-fun-preview`
+- **Files owned:** `playwright.config.ts`, `STATUS.md`, `docs/AGENT_LOG.md`, `docs/PULL_REQUESTS.md`
+- **Note:** Claim the preview run. Local lint, build, and e2e stay on `next start`. A set `PLAYWRIGHT_BASE_URL` runs the same suite against a Vercel preview and does not start `webServer`. Do not attach the domain.
+
+## 2026-10-20 11:21 — NF6 preview only
+
+- **Status:** blocked
+- **Branch:** `chore/notebook-fun-preview`
+- **Files owned:** `playwright.config.ts`, `STATUS.md`, `docs/AGENT_LOG.md`, `docs/PULL_REQUESTS.md`, `docs/NOTEBOOK-FUN-PLAN.md`, `docs/prompts/NF6-blocked.md`
+- **Note:** Local lint, build, and e2e passed (19). PR https://github.com/wolpino/ariella.website/pull/7 has green `ci`. Preview is https://ariellawebsite-git-chore-notebook-0dd1b7-aris-projects-caeacc08.vercel.app but page navigations redirect to `vercel.com/login`. `vercel whoami` has no credentials, so protection could not be changed. `https://www.ariella.website` still contains `Mostly practice!`. Next prompt is `docs/prompts/NF6-blocked.md`. Do not attach the domain.

@@ -1,7 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const port = 3000;
-const baseURL = `http://127.0.0.1:${port}`;
+const localURL = `http://127.0.0.1:${port}`;
+const previewURL = process.env.PLAYWRIGHT_BASE_URL;
+const baseURL = previewURL || localURL;
 
 export default defineConfig({
   testDir: "./e2e",
@@ -20,10 +22,14 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
   ],
-  webServer: {
-    command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,
-    url: baseURL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
-  },
+  ...(previewURL
+    ? {}
+    : {
+        webServer: {
+          command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,
+          url: localURL,
+          reuseExistingServer: !process.env.CI,
+          timeout: 120_000,
+        },
+      }),
 });
