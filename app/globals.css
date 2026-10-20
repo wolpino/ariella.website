@@ -110,6 +110,24 @@ body {
   width: 100%;
 }
 
+/* The notebook fills the space under the sticky header.
+   Studio renders .desk outside .site-main and sizes its own toolbar. */
+html:has(.site-main .desk),
+html:has(.site-main .desk) body {
+  height: 100dvh;
+}
+
+html:has(.site-main .desk) body {
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+.site-main:has(.desk) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
 /* Header */
 
 .site-header {

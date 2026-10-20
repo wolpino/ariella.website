@@ -2,6 +2,8 @@
 
 Short product/tech source of truth. Living detail and phases live in [PLAN.md](PLAN.md). Agent workflow lives in [AGENTS.md](AGENTS.md).
 
+**The Fun-home rows below are partly stale.** `/` in Fun is the notebook, not a CSS-only restyle of the same page. Current port: [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md). The site-map phases are later work, not the current task. Do not attach the domain from this file.
+
 ## Product
 
 Personal site hub for Ariella Wolpin: projects (creative + code), experience, and links to satellite apps.
@@ -14,8 +16,8 @@ Personal site hub for Ariella Wolpin: projects (creative + code), experience, an
 
 | | Professional (default) | Fun |
 |--|------------------------|-----|
-| Feel | Restrained, clean, recruiter-ready | Expressive; evolved from current Wix site |
-| Change | Presentation only | Presentation only |
+| Feel | Restrained, clean, recruiter-ready | Fun home is the notebook cover. Projects and Contact stay expressive |
+| Change | Presentation only | Home may switch components. Other pages stay presentation-only |
 
 Shared: navigation, content, routing, components, accessibility, IA.
 

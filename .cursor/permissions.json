@@ -1,0 +1,15 @@
+{
+  "autoRun": {
+    "allow_instructions": [
+      "Allow reads, edits, tests, lint, and builds in this repository.",
+      "Allow git status, diff, log, add, and commit on feature branches.",
+      "Allow opening a pull request for a feature branch. Do not merge to main unless the notebook plan's current step says to.",
+      "Allow npm install, npm ci, npm test, npm run lint, npm run build, and Playwright."
+    ],
+    "block_instructions": [
+      "Ask for approval before any command that adds, removes, or edits the domains ariella.website, www.ariella.website, or photos.ariella.website.",
+      "Ask for approval before vercel --prod, production deploys, Porkbun or DNS changes, and creating or changing a Render service.",
+      "Ask for approval before git push --force, git reset --hard, or deleting a Vercel project."
+    ]
+  }
+}

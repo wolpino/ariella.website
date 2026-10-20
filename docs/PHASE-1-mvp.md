@@ -1,5 +1,7 @@
 # Phase 1 — MVP pages (PR2)
 
+**Archive.** This file records what shipped on 2026-08-13. It is not the current build. “Fun is the photobooth” and “Follow-ups: attach the domain” are stale. Current work is [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+
 **Branch:** `feat/mvp-pages`  
 **Status:** verified by human 2026-08-13  
 **Commits:** Home / Projects / Contact, Fun hybrid restyle, Professional window texture

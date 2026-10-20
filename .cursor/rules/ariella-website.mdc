@@ -7,19 +7,23 @@ alwaysApply: true
 
 Before implementing, read:
 
-1. `AGENTS.md`
-2. `PLAN.md`
-3. `docs/PULL_REQUESTS.md`
-4. `docs/DECISION_LOG.md`
-5. `STATUS.md`
-6. `docs/FUN-THEME.md` when changing Fun visuals
+1. `docs/NOTEBOOK-FUN-PLAN.md` — current port. It wins over older Fun and deploy docs
+2. `docs/AGENT_LOG.md` — claim a step before starting. Skip steps already in progress
+3. `docs/prompts/NF2.md` if that step is still the next one, otherwise the latest `docs/prompts/NF*.md`
+4. `STATUS.md`
+5. `docs/PULL_REQUESTS.md`
+6. `docs/DECISION_LOG.md` — the 2026-10-02 entry wins for Fun home and deploy
+7. `AGENTS.md`
+
+`docs/FUN-THEME.md` below its Archive heading, `docs/HANDOFF-FUN-THEME.md`, `docs/PHASE-1-mvp.md`, and `docs/PHASE-1-deploy.md` are history. Do not execute them.
 
 Rules:
 
 - Work **one PR chunk at a time** as listed in `docs/PULL_REQUESTS.md`
 - Prefer settled answers in `docs/DECISION_LOG.md` over re-asking
 - When the user answers a clarifying question, **append** Q/A/Implication to `docs/DECISION_LOG.md` before continuing
-- After finishing a chunk, stop for human verify unless asked to continue
-- When the user is satisfied with a chunk, write the matching `docs/PHASE-*.md` and update `STATUS.md` + `docs/PULL_REQUESTS.md`
-- Keep changes scoped; no monorepo, CMS, or out-of-chunk features
+- NF2 through NF5 do not wait for human verify. Stop at NF6's preview URL. Do not attach `ariella.website`, `www`, or change `photos.ariella.website`
+- When the context window is about halfway full, write the next `docs/prompts/NF*.md` in the same detail as `docs/prompts/NF2.md` before stopping
+- After a chunk is actually finished, update `STATUS.md` and `docs/PULL_REQUESTS.md`. Write `docs/PHASE-notebook-fun.md` only after NF6
+- Keep changes scoped; no monorepo, CMS, Render service, or out-of-chunk features
 - Honor non-negotiables: mobile, a11y, image performance, theme reliability, recruiter clarity

@@ -14,6 +14,9 @@ export function ThemeToggle({ initialTheme }: { initialTheme: ThemeId }) {
 
   useEffect(() => {
     hydrateThemeStore(initialTheme);
+    // The pre-paint script may have applied localStorage after the server
+    // render. Syncing here keeps the first client render aligned with HTML.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(getThemeSnapshot());
     return subscribeTheme(() => {
       setTheme(getThemeSnapshot());

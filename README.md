@@ -4,6 +4,8 @@ Personal portfolio hub for Ariella Wolpin — Next.js on Vercel with a Professio
 
 ## Docs for agents & humans
 
+- [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md) — current port. If another doc disagrees, this wins
+- [docs/prompts/NF2.md](docs/prompts/NF2.md) — next agent prompt
 - [AGENTS.md](AGENTS.md) — how agents should work in this repo
 - [PLAN.md](PLAN.md) — living build plan
 - [SPEC.md](SPEC.md) — short product/tech spec
@@ -22,7 +24,11 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-GitHub: [wolpino/ariella.website](https://github.com/wolpino/ariella.website). Production host: Vercel. Domain: `ariella.website`.
+**Do not follow the archive steps below during the notebook port.** Current work stops at a Vercel preview URL. Do not add `ariella.website` or `www`, and do not change `photos.ariella.website`. See [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md).
+
+### Archive — earlier deploy notes
+
+GitHub: [wolpino/ariella.website](https://github.com/wolpino/ariella.website). Production host was planned as Vercel. These steps are not the current task:
 
 1. `vercel login` (or Import the GitHub repo in the Vercel dashboard; Production branch `main`)
 2. `vercel link` then `vercel --prod` from this repo, or let GitHub integration deploy `main`
