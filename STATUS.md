@@ -1,6 +1,7 @@
 # Status
 
-- **Current:** NF6 is blocked. Branch `chore/notebook-fun-preview`. Preview URL exists, and Vercel Authentication sends page loads to login
+- **Current:** design reset. Read [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md) first. It supersedes the lines below, which are stale: `www.ariella.website` already serves this app as of 2026-10-20
+- **Previously:** NF6 is blocked. Branch `chore/notebook-fun-preview`. Preview URL exists, and Vercel Authentication sends page loads to login
 - **Next:** [docs/prompts/NF6-blocked.md](docs/prompts/NF6-blocked.md). Finish the preview suite after Vercel login. Do not attach the domain
 - **Not now:** attaching `ariella.website` or `www`. PR3 domain work is deferred
 - **Live site:** `https://www.ariella.website` still contains `Mostly practice!` (checked 2026-10-20). Leave it, and leave `photos.ariella.website`, alone

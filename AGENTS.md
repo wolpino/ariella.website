@@ -8,6 +8,7 @@ This project uses a recent Next.js. APIs and conventions may differ from older t
 
 ## Read first (every session)
 
+0. [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md) — current direction as of 2026-10-20. It wins over everything below until those docs are rewritten
 1. [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md) — current port. If this disagrees with older Fun docs, the plan wins
 2. [docs/AGENT_LOG.md](docs/AGENT_LOG.md) — claim a step before starting. Skip steps already `in_progress`
 3. [STATUS.md](STATUS.md) — current focus
