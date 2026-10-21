@@ -227,3 +227,13 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Current page:** clearly marked in the menu as well as the title, probably in gold. Round 6 compares gold tape, gold text, and color tape with a gold ring.
 - **Home link:** maybe the open notebook alone, without "Ari Wolpin". Open question.
 - **Gold on home:** maybe some gold on the home page to tie it to inner pages. Round 6 compares hover only, a gold name at the top, and a desk-lamp glow.
+
+## 2026-10-21 — Mockups round 6 reaction
+
+- **Names:** header says "Ariella Wolpin". The cover label NAME says "Ari" (no surname).
+- **Home top bar:** Ari's name, gold on hover. No web address on the page. The "updated" date moves to a footer.
+- **Gold on home:** hover only. No desk-lamp glow.
+- **Inner-page menu:** Projects and Résumé. No tape on inner pages; the current page is a flat gold label (like the mockup's "stand-in list" label). Home link is the open notebook.
+- **Cover tape:** should look like real, shiny Dymo plastic, not a grainy texture.
+- **Fonts:** unsure about the name/title serif and the cover handwriting. The final mockup round offers four of each.
+- **Revisit later:** clicking the notebook itself (not a label) opens Projects. The cover image is not final; make the notebook more three-dimensional, and maybe bring gold in there.

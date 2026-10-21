@@ -118,9 +118,10 @@ Ari picks one or mixes them. Record the pick in DECISION_LOG.
 - **Reuse:** keep the existing notebook and Dymo components (`components/notebook/`, `components/dymo/DymoTape.tsx`, `components/resume/*`), the editions archive, and `/studio`.
 - **Restyle:** Projects and Contact in the new design.
 - **Photos:** use `next/image` with resized assets. Delete the dead assets left over from old designs: `components/photo-strip.tsx`, `content/fun-strip.ts`, the unused `marble-cover*.jpg`, `binding-tape.jpg`, `window-fan.jpg`, and `marble-speckle.svg` if unused.
-- **Dymo tape:** final look is done here, not in the mockups. Approach chosen 2026-10-21: a real tape texture (scan or photo of blank tape) behind live text, in red (Projects), blue (Résumé), green (LinkedIn), gold, and black. Needs a clean scan of blank tape per color, or one grayscale scan blended over each color. Check text contrast on every color.
+- **Dymo tape:** final look is done here, not in the mockups. Approach chosen 2026-10-21: on the home cover only, real-looking shiny Dymo plastic (gloss, raised white letters) behind live text; no tape on inner pages, in red (Projects), blue (Résumé), green (LinkedIn), gold, and black. Needs a clean scan of blank tape per color, or one grayscale scan blended over each color. Check text contrast on every color.
 - **Photos:** clicking a photo opens a larger view on the page with a link to `photos.ariella.website`. Keyboard and Escape must work.
 - **Versions:** the editions archive is linked from its card on Projects, not from the home cover.
+- **Revisit during the build:** clicking the notebook itself (not a label) opens Projects. Replace the cover image with a more three-dimensional notebook, possibly with a gold detail.
 - **Tests:** rewrite `e2e/regression.spec.ts` around the new copy. Cover the résumé link visible on `/`, mobile nav, and the 404. Drop the cookie and theme cases.
 - **Later, re-planned against the new design:** About, photo collections, Notes.
 
