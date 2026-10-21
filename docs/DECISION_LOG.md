@@ -197,3 +197,16 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Q:** Is the contact sheet too far from the notebook home?
 - **A:** Bridge it: tape the contact sheet into a notebook page, and add a film element (film strip) to the home page.
 - **Implication:** Round 3 mockups test exactly these. No color key on the real site.
+
+## 2026-10-21 — Mockups round 3 reaction
+
+- **Q:** Home with a film strip or with negatives under the cover?
+- **A:** Film strip along the bottom. No tagline under the notebook.
+- **Q:** Does Versions stay on the cover?
+- **A:** No. The past versions become a project ("This website") on the Projects page. The cover keeps three labels: Projects, Résumé, LinkedIn.
+- **Q:** Home link on inner pages?
+- **A:** The small open notebook with HOME tape. Gold tape, or quiet black so it doesn't pull the eye; round 4 shows both.
+- **Q:** Contact sheet in the notebook?
+- **A:** Felt odd. Try no film on Projects: white-border photos like Home, either on the desk or taped into a notebook page. Round 4 shows both.
+- **Q:** Tape?
+- **A:** Finalize later, during the build. The plan should say so.

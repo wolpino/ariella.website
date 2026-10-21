@@ -1,6 +1,6 @@
 # Design reset — 2026-10-20
 
-> **Resume here.** Step 1 (slim the docs) done 2026-10-21. Step 2 (mockups) in progress: round 1 picked A's home and B's Projects; round 2 is out for review. Step 0 waits until before the link is shared; it still needs two answers from Ari:
+> **Resume here.** Step 1 (slim the docs) done 2026-10-21. Step 2 (mockups) in progress: round 4 is out for review (picks so far are in the DECISION_LOG 2026-10-21 entries). Step 0 waits until before the link is shared; it still needs two answers from Ari:
 > 1. Which projects go on the Projects page? (If none yet, hide the `coming-soon` cards.)
 > 2. Is the Gmail address printed in `public/resume.pdf` and `content/resume.ts` OK to keep public?
 
@@ -118,6 +118,9 @@ Ari picks one or mixes them. Record the pick in DECISION_LOG.
 - **Reuse:** keep the existing notebook and Dymo components (`components/notebook/`, `components/dymo/DymoTape.tsx`, `components/resume/*`), the editions archive, and `/studio`.
 - **Restyle:** Projects and Contact in the new design.
 - **Photos:** use `next/image` with resized assets. Delete the dead assets left over from old designs: `components/photo-strip.tsx`, `content/fun-strip.ts`, the unused `marble-cover*.jpg`, `binding-tape.jpg`, `window-fan.jpg`, and `marble-speckle.svg` if unused.
+- **Dymo tape:** final look is done here, not in the mockups. Approach chosen 2026-10-21: a real tape texture (scan or photo of blank tape) behind live text, in red (Projects), blue (Résumé), green (LinkedIn), gold, and black. Needs a clean scan of blank tape per color, or one grayscale scan blended over each color. Check text contrast on every color.
+- **Photos:** clicking a photo opens a larger view on the page with a link to `photos.ariella.website`. Keyboard and Escape must work.
+- **Versions:** the editions archive is linked from its card on Projects, not from the home cover.
 - **Tests:** rewrite `e2e/regression.spec.ts` around the new copy. Cover the résumé link visible on `/`, mobile nav, and the 404. Drop the cookie and theme cases.
 - **Later, re-planned against the new design:** About, photo collections, Notes.
 
