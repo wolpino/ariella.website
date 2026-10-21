@@ -181,3 +181,19 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **A:** Home from A (the closed notebook cover with Dymo tape tabs). Projects from B (photo-led cards on charcoal). Asked for a second round of mockups to have more choices.
 - **Implication:** Round 2 explores variations of a notebook home and a photo-first Projects page, plus how the two connect (shared header and nav). Nothing in the repo changes until a pick.
 
+
+## 2026-10-21 — Mockups round 2 reaction
+
+- **Q:** Which round 2 options?
+- **A:** Home 3 (color Dymo tape: red Projects, blue Résumé, green LinkedIn, gold Versions). Projects 2 (contact sheet with a grease-pencil circle on the pick).
+- **Q:** Where do the labels go on the cover?
+- **A:** The lower half of the notebook.
+- **Q:** How real should the tape look?
+- **A:** A real tape texture with live text on top (not a photo per label, not plain CSS).
+- **Q:** What happens when a photo is clicked?
+- **A:** It opens bigger on the page, with a link to `photos.ariella.website`.
+- **Q:** How does an inner page link back home?
+- **A:** A bigger mini notebook, mixing a white label and a HOME Dymo tape. Maybe an open notebook; undecided.
+- **Q:** Is the contact sheet too far from the notebook home?
+- **A:** Bridge it: tape the contact sheet into a notebook page, and add a film element (film strip) to the home page.
+- **Implication:** Round 3 mockups test exactly these. No color key on the real site.
