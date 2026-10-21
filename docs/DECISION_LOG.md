@@ -218,3 +218,12 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Home link:** open notebook, quiet by default; on hover the tape and the "Ari Wolpin" name turn gold.
 - **Title:** say "Projects" once, either as the serif title or as red tape. More space between the header and the title.
 - **Tape:** may be a home-page-only thing. Inner pages could use plain text nav (keeping the color per section). Round 5 shows both.
+
+## 2026-10-21 — Mockups round 5 reaction
+
+- **Home:** on a phone, just the notebook. On desktop, photos on the desk.
+- **Projects photos:** straight, no tape.
+- **Menu on inner pages:** Projects and Résumé only. LinkedIn lives on the cover and inside the résumé, not in the menu.
+- **Current page:** clearly marked in the menu as well as the title, probably in gold. Round 6 compares gold tape, gold text, and color tape with a gold ring.
+- **Home link:** maybe the open notebook alone, without "Ari Wolpin". Open question.
+- **Gold on home:** maybe some gold on the home page to tie it to inner pages. Round 6 compares hover only, a gold name at the top, and a desk-lamp glow.
