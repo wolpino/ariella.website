@@ -2,7 +2,7 @@ import type { ThemeConfig } from "./types";
 
 /**
  * Photobooth + pinball hybrid Fun theme — opt-in.
- * Inky black frames, high-contrast greys, one amber glow. See docs/FUN-THEME.md
+ * Inky black frames, high-contrast greys, one amber glow. See docs/archive/FUN-THEME.md
  */
 export const fun: ThemeConfig = {
   id: "fun",

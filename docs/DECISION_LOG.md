@@ -2,7 +2,7 @@
 
 Append-only. Agents: when the user answers a clarifying question, add an entry before continuing.
 
-**Current Fun home and deploy decisions are the 2026-10-02 entry at the bottom.** Entries before that are history. Do not revive the photobooth as the Fun home, and do not attach the domain, from an older entry.
+**Current decisions are the 2026-10-21 entries at the bottom.** Everything before them is history. Do not revive a theme toggle or an old direction from an older entry.
 
 Format:
 
@@ -110,7 +110,7 @@ Format:
 
 - **Q:** Freeze night wasn’t close; Collections hero card disliked; pinball glow vs photobooth pattern?
 - **A:** **Hybrid.** Photobooth pattern (inky black, high-contrast greyscale framing, narrow vertical rhythm — not actual booth portraits as theme content) + one warm pinball-bulb amber accent. **Vertical** scrolling photo strip (not horizontal; Wix feels too wide). Use images from `images/` for now (resized into `public/fun-strip/`); swappable later. Remove Collections rectangle.
-- **Implication:** See [docs/FUN-THEME.md](FUN-THEME.md). Strip: `components/photo-strip.tsx` + `content/fun-strip.ts`. Professional unchanged.
+- **Implication:** See [docs/FUN-THEME.md](archive/FUN-THEME.md). Strip: `components/photo-strip.tsx` + `content/fun-strip.ts`. Professional unchanged.
 
 ## 2026-08-13 — Name lives in the header, not the Home title
 
@@ -144,7 +144,7 @@ Format:
 
 ## 2026-10-02 — Fun home is the notebook; domain stays put
 
-Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08-13 “collections” heading entry, and the parked-notebook notes in [FUN-THEME.md](FUN-THEME.md). Those entries stay as history. Execution plan: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08-13 “collections” heading entry, and the parked-notebook notes in [FUN-THEME.md](archive/FUN-THEME.md). Those entries stay as history. Execution plan: [NOTEBOOK-FUN-PLAN.md](archive/NOTEBOOK-FUN-PLAN.md).
 
 - **Q:** Where does the composition notebook live, and what does `ariella.website` serve?
 - **A:**
@@ -157,4 +157,98 @@ Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08
   - Home may switch component trees by theme. Projects and Contact may not.
   - Hosting stays Vercel. Porkbun remains the registrar. Nameservers stay on Vercel DNS. Do not create a Render service. Do not attach `ariella.website` or `www` in this effort. Stop at a preview URL. `photos.ariella.website` stays on the `my_first_website` project.
   - Copy from the local notebook commit above. GitHub `wolpino/ariellawebsite` `main` is behind that commit.
-- **Implication:** Follow [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md). Do not “finish” old PR3 by attaching the domain. Do not restore the photobooth as the Fun home.
+- **Implication:** Follow [NOTEBOOK-FUN-PLAN.md](archive/NOTEBOOK-FUN-PLAN.md). Do not “finish” old PR3 by attaching the domain. Do not restore the photobooth as the Fun home.
+
+## 2026-10-21 — Design reset: one design, mockups first
+
+Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entry. Full review: [DESIGN-RESET.md](DESIGN-RESET.md) (review held 2026-10-20).
+
+- **Q:** Does the site need to look professional? One design or keep the Professional / Fun toggle?
+- **A:** No. One personal design, no toggle. Recruiters need a fast path to who Ari is, the résumé, and LinkedIn, and that fits inside a design that's clearly Ari's.
+- **Q:** What to keep and drop?
+- **A:** Keep Ari's photos front and center, the notebook cover with Dymo labels, and charcoal with a gold/amber glow. Drop the beige Professional look and the kitchen-window texture.
+- **Q:** How are design decisions made?
+- **A:** Visual mockups first. Ari reacts to pixels before any repo change.
+- **Q:** Public contact? Projects?
+- **A:** LinkedIn only. Ari supplies the real projects.
+- **Q:** Order of steps?
+- **A:** Steps 1 (docs) and 2 (mockups) first. Step 0 (live copy fix) waits, because the site isn't being shared yet. Do it before sharing the link.
+- **Implication:** Old agent process docs moved to `docs/archive/`. STATUS, PLAN, AGENTS, and SPEC rewritten short. `www.ariella.website` already serves this app, so merging to `main` is a deploy.
+
+## 2026-10-21 — Mockups round 1 reaction
+
+- **Q:** Which of the three directions (A notebook, B photo-first, C scrapbook)?
+- **A:** Home from A (the closed notebook cover with Dymo tape tabs). Projects from B (photo-led cards on charcoal). Asked for a second round of mockups to have more choices.
+- **Implication:** Round 2 explores variations of a notebook home and a photo-first Projects page, plus how the two connect (shared header and nav). Nothing in the repo changes until a pick.
+
+
+## 2026-10-21 — Mockups round 2 reaction
+
+- **Q:** Which round 2 options?
+- **A:** Home 3 (color Dymo tape: red Projects, blue Résumé, green LinkedIn, gold Versions). Projects 2 (contact sheet with a grease-pencil circle on the pick).
+- **Q:** Where do the labels go on the cover?
+- **A:** The lower half of the notebook.
+- **Q:** How real should the tape look?
+- **A:** A real tape texture with live text on top (not a photo per label, not plain CSS).
+- **Q:** What happens when a photo is clicked?
+- **A:** It opens bigger on the page, with a link to `photos.ariella.website`.
+- **Q:** How does an inner page link back home?
+- **A:** A bigger mini notebook, mixing a white label and a HOME Dymo tape. Maybe an open notebook; undecided.
+- **Q:** Is the contact sheet too far from the notebook home?
+- **A:** Bridge it: tape the contact sheet into a notebook page, and add a film element (film strip) to the home page.
+- **Implication:** Round 3 mockups test exactly these. No color key on the real site.
+
+## 2026-10-21 — Mockups round 3 reaction
+
+- **Q:** Home with a film strip or with negatives under the cover?
+- **A:** Film strip along the bottom. No tagline under the notebook.
+- **Q:** Does Versions stay on the cover?
+- **A:** No. The past versions become a project ("This website") on the Projects page. The cover keeps three labels: Projects, Résumé, LinkedIn.
+- **Q:** Home link on inner pages?
+- **A:** The small open notebook with HOME tape. Gold tape, or quiet black so it doesn't pull the eye; round 4 shows both.
+- **Q:** Contact sheet in the notebook?
+- **A:** Felt odd. Try no film on Projects: white-border photos like Home, either on the desk or taped into a notebook page. Round 4 shows both.
+- **Q:** Tape?
+- **A:** Finalize later, during the build. The plan should say so.
+
+## 2026-10-21 — Mockups round 4 reaction
+
+- **Home:** no film strip and no tagline. A tagline is fine later if it sounds like Ari; the drafted one didn't.
+- **Projects:** on the desk, not notebook paper. White-border photos with no tape and no grease-pencil circle; the gold glow on hover is the highlight. Keep the gold type labels under each image. Straight or tilted photos still open.
+- **Home link:** open notebook, quiet by default; on hover the tape and the "Ari Wolpin" name turn gold.
+- **Title:** say "Projects" once, either as the serif title or as red tape. More space between the header and the title.
+- **Tape:** may be a home-page-only thing. Inner pages could use plain text nav (keeping the color per section). Round 5 shows both.
+
+## 2026-10-21 — Mockups round 5 reaction
+
+- **Home:** on a phone, just the notebook. On desktop, photos on the desk.
+- **Projects photos:** straight, no tape.
+- **Menu on inner pages:** Projects and Résumé only. LinkedIn lives on the cover and inside the résumé, not in the menu.
+- **Current page:** clearly marked in the menu as well as the title, probably in gold. Round 6 compares gold tape, gold text, and color tape with a gold ring.
+- **Home link:** maybe the open notebook alone, without "Ari Wolpin". Open question.
+- **Gold on home:** maybe some gold on the home page to tie it to inner pages. Round 6 compares hover only, a gold name at the top, and a desk-lamp glow.
+
+## 2026-10-21 — Mockups round 6 reaction
+
+- **Names:** header says "Ariella Wolpin". The cover label NAME says "Ari" (no surname).
+- **Home top bar:** Ari's name, gold on hover. No web address on the page. The "updated" date moves to a footer.
+- **Gold on home:** hover only. No desk-lamp glow.
+- **Inner-page menu:** Projects and Résumé. No tape on inner pages; the current page is a flat gold label (like the mockup's "stand-in list" label). Home link is the open notebook.
+- **Cover tape:** should look like real, shiny Dymo plastic, not a grainy texture.
+- **Fonts:** unsure about the name/title serif and the cover handwriting. The final mockup round offers four of each.
+- **Revisit later:** clicking the notebook itself (not a label) opens Projects. The cover image is not final; make the notebook more three-dimensional, and maybe bring gold in there.
+
+## 2026-10-21 — Mockups round 7 reaction
+
+- **Cover handwriting:** Permanent Marker.
+- **Cover label:** "photography · words" (not "photos").
+- **Name and title font:** still undecided; revisit later. It may clash with the small all-caps mono labels (menu, project type lines). Round 8 tests lowercase labels.
+- **Home link:** the open notebook should still say home. Round 8 writes "home" on it in the cover marker, always visible or on hover only (always visible on touch screens).
+- **Footer:** replace the plain name with a specific copyright line saying the photos are Ari's own.
+
+## 2026-10-21 — Mockups round 8 reaction (design settled for now)
+
+- **Home link:** the open notebook with a HOME label under it in the same style as the menu (small caps), always visible, so it reads as part of the header. Gold on hover.
+- **Small labels:** stay in caps for now.
+- **Still open, revisit during the build:** the name and title font; the cover image (more three-dimensional, maybe gold).
+- **Final mockup:** https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz (private to Ari). Earlier rounds are history.

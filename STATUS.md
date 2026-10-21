@@ -1,8 +1,10 @@
 # Status
 
-- **Current:** design reset. Read [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md) first. It supersedes the lines below, which are stale: `www.ariella.website` already serves this app as of 2026-10-20
-- **Previously:** NF6 is blocked. Branch `chore/notebook-fun-preview`. Preview URL exists, and Vercel Authentication sends page loads to login
-- **Next:** [docs/prompts/NF6-blocked.md](docs/prompts/NF6-blocked.md). Finish the preview suite after Vercel login. Do not attach the domain
-- **Not now:** attaching `ariella.website` or `www`. PR3 domain work is deferred
-- **Live site:** `https://www.ariella.website` still contains `Mostly practice!` (checked 2026-10-20). Leave it, and leave `photos.ariella.website`, alone
-- **Last verified:** `npm run lint`, `npm run build`, and local `npm run test:e2e` (19) on 2026-10-20. Pull request `ci` is green. Preview suite is not green
+- **Live:** `https://www.ariella.website` serves this app from `main` (Vercel). Merging to `main` deploys.
+- **Current:** design reset. Direction and steps: [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md).
+- **Done:** Step 1, docs slimmed (2026-10-21).
+- **Next:** Step 0, fix the live copy. Start here: the "Resume here" box at the top of [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md).
+- **Done:** Step 2 mockups (design settled for now; final mockup and picks in `docs/DECISION_LOG.md`).
+- **Still to do:** Step 0 waits on two answers (project list; Gmail in the résumé). Do it before sharing the link.
+- **Then:** Step 3, build the chosen design.
+- **Last verified:** `npm run lint`, `npm run build`, `npm run test:e2e` (19) on 2026-10-20.

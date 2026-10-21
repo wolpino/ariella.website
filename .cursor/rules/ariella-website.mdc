@@ -1,29 +1,14 @@
 ---
-description: Operating protocol for ariella.website — shared agent memory and PR workflow
+description: Operating protocol for ariella.website
 alwaysApply: true
 ---
 
 # ariella.website agent protocol
 
-Before implementing, read:
+Read `AGENTS.md` first. It lists the three docs that matter: `STATUS.md`, `docs/DESIGN-RESET.md`, and `docs/DECISION_LOG.md`.
 
-1. `docs/NOTEBOOK-FUN-PLAN.md` — current port. It wins over older Fun and deploy docs
-2. `docs/AGENT_LOG.md` — claim a step before starting. Skip steps already in progress
-3. `docs/prompts/NF2.md` if that step is still the next one, otherwise the latest `docs/prompts/NF*.md`
-4. `STATUS.md`
-5. `docs/PULL_REQUESTS.md`
-6. `docs/DECISION_LOG.md` — the 2026-10-02 entry wins for Fun home and deploy
-7. `AGENTS.md`
-
-`docs/FUN-THEME.md` below its Archive heading, `docs/HANDOFF-FUN-THEME.md`, `docs/PHASE-1-mvp.md`, and `docs/PHASE-1-deploy.md` are history. Do not execute them.
-
-Rules:
-
-- Work **one PR chunk at a time** as listed in `docs/PULL_REQUESTS.md`
-- Prefer settled answers in `docs/DECISION_LOG.md` over re-asking
-- When the user answers a clarifying question, **append** Q/A/Implication to `docs/DECISION_LOG.md` before continuing
-- NF2 through NF5 do not wait for human verify. Stop at NF6's preview URL. Do not attach `ariella.website`, `www`, or change `photos.ariella.website`
-- When the context window is about halfway full, write the next `docs/prompts/NF*.md` in the same detail as `docs/prompts/NF2.md` before stopping
-- After a chunk is actually finished, update `STATUS.md` and `docs/PULL_REQUESTS.md`. Write `docs/PHASE-notebook-fun.md` only after NF6
-- Keep changes scoped; no monorepo, CMS, Render service, or out-of-chunk features
-- Honor non-negotiables: mobile, a11y, image performance, theme reliability, recruiter clarity
+- `docs/archive/` is history. Do not execute it.
+- One step at a time, only when Ari asks.
+- Mockups before any design change in the repo.
+- Ari merges PRs. Merging to `main` deploys to the live domain.
+- Append answered questions to `docs/DECISION_LOG.md`.
