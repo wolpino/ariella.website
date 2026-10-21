@@ -237,3 +237,11 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Cover tape:** should look like real, shiny Dymo plastic, not a grainy texture.
 - **Fonts:** unsure about the name/title serif and the cover handwriting. The final mockup round offers four of each.
 - **Revisit later:** clicking the notebook itself (not a label) opens Projects. The cover image is not final; make the notebook more three-dimensional, and maybe bring gold in there.
+
+## 2026-10-21 — Mockups round 7 reaction
+
+- **Cover handwriting:** Permanent Marker.
+- **Cover label:** "photography · words" (not "photos").
+- **Name and title font:** still undecided; revisit later. It may clash with the small all-caps mono labels (menu, project type lines). Round 8 tests lowercase labels.
+- **Home link:** the open notebook should still say home. Round 8 writes "home" on it in the cover marker, always visible or on hover only (always visible on touch screens).
+- **Footer:** replace the plain name with a specific copyright line saying the photos are Ari's own.
