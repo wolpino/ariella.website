@@ -2,7 +2,7 @@
 
 Append-only. Agents: when the user answers a clarifying question, add an entry before continuing.
 
-**Current Fun home and deploy decisions are the 2026-10-02 entry at the bottom.** Entries before that are history. Do not revive the photobooth as the Fun home, and do not attach the domain, from an older entry.
+**Current decisions are the 2026-10-21 entries at the bottom.** Everything before them is history. Do not revive a theme toggle or an old direction from an older entry.
 
 Format:
 
@@ -110,7 +110,7 @@ Format:
 
 - **Q:** Freeze night wasn’t close; Collections hero card disliked; pinball glow vs photobooth pattern?
 - **A:** **Hybrid.** Photobooth pattern (inky black, high-contrast greyscale framing, narrow vertical rhythm — not actual booth portraits as theme content) + one warm pinball-bulb amber accent. **Vertical** scrolling photo strip (not horizontal; Wix feels too wide). Use images from `images/` for now (resized into `public/fun-strip/`); swappable later. Remove Collections rectangle.
-- **Implication:** See [docs/FUN-THEME.md](FUN-THEME.md). Strip: `components/photo-strip.tsx` + `content/fun-strip.ts`. Professional unchanged.
+- **Implication:** See [docs/FUN-THEME.md](archive/FUN-THEME.md). Strip: `components/photo-strip.tsx` + `content/fun-strip.ts`. Professional unchanged.
 
 ## 2026-08-13 — Name lives in the header, not the Home title
 
@@ -144,7 +144,7 @@ Format:
 
 ## 2026-10-02 — Fun home is the notebook; domain stays put
 
-Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08-13 “collections” heading entry, and the parked-notebook notes in [FUN-THEME.md](FUN-THEME.md). Those entries stay as history. Execution plan: [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md).
+Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08-13 “collections” heading entry, and the parked-notebook notes in [FUN-THEME.md](archive/FUN-THEME.md). Those entries stay as history. Execution plan: [NOTEBOOK-FUN-PLAN.md](archive/NOTEBOOK-FUN-PLAN.md).
 
 - **Q:** Where does the composition notebook live, and what does `ariella.website` serve?
 - **A:**
@@ -157,4 +157,27 @@ Supersedes the Fun-home portions of the 2026-07-21 photobooth entry, the 2026-08
   - Home may switch component trees by theme. Projects and Contact may not.
   - Hosting stays Vercel. Porkbun remains the registrar. Nameservers stay on Vercel DNS. Do not create a Render service. Do not attach `ariella.website` or `www` in this effort. Stop at a preview URL. `photos.ariella.website` stays on the `my_first_website` project.
   - Copy from the local notebook commit above. GitHub `wolpino/ariellawebsite` `main` is behind that commit.
-- **Implication:** Follow [NOTEBOOK-FUN-PLAN.md](NOTEBOOK-FUN-PLAN.md). Do not “finish” old PR3 by attaching the domain. Do not restore the photobooth as the Fun home.
+- **Implication:** Follow [NOTEBOOK-FUN-PLAN.md](archive/NOTEBOOK-FUN-PLAN.md). Do not “finish” old PR3 by attaching the domain. Do not restore the photobooth as the Fun home.
+
+## 2026-10-21 — Design reset: one design, mockups first
+
+Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entry. Full review: [DESIGN-RESET.md](DESIGN-RESET.md) (review held 2026-10-20).
+
+- **Q:** Does the site need to look professional? One design or keep the Professional / Fun toggle?
+- **A:** No. One personal design, no toggle. Recruiters need a fast path to who Ari is, the résumé, and LinkedIn, and that fits inside a design that's clearly Ari's.
+- **Q:** What to keep and drop?
+- **A:** Keep Ari's photos front and center, the notebook cover with Dymo labels, and charcoal with a gold/amber glow. Drop the beige Professional look and the kitchen-window texture.
+- **Q:** How are design decisions made?
+- **A:** Visual mockups first. Ari reacts to pixels before any repo change.
+- **Q:** Public contact? Projects?
+- **A:** LinkedIn only. Ari supplies the real projects.
+- **Q:** Order of steps?
+- **A:** Steps 1 (docs) and 2 (mockups) first. Step 0 (live copy fix) waits, because the site isn't being shared yet. Do it before sharing the link.
+- **Implication:** Old agent process docs moved to `docs/archive/`. STATUS, PLAN, AGENTS, and SPEC rewritten short. `www.ariella.website` already serves this app, so merging to `main` is a deploy.
+
+## 2026-10-21 — Mockups round 1 reaction
+
+- **Q:** Which of the three directions (A notebook, B photo-first, C scrapbook)?
+- **A:** Home from A (the closed notebook cover with Dymo tape tabs). Projects from B (photo-led cards on charcoal). Asked for a second round of mockups to have more choices.
+- **Implication:** Round 2 explores variations of a notebook home and a photo-first Projects page, plus how the two connect (shared header and nav). Nothing in the repo changes until a pick.
+

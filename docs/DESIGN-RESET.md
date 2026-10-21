@@ -1,6 +1,10 @@
 # Design reset — 2026-10-20
 
-Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs are stale until Step 1 below archives or rewrites them.
+> **Resume here.** Step 1 (slim the docs) done 2026-10-21. Step 2 (mockups) in progress: round 1 picked A's home and B's Projects; round 2 is out for review. Step 0 waits until before the link is shared; it still needs two answers from Ari:
+> 1. Which projects go on the Projects page? (If none yet, hide the `coming-soon` cards.)
+> 2. Is the Gmail address printed in `public/resume.pdf` and `content/resume.ts` OK to keep public?
+
+Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs were archived or rewritten in Step 1 (2026-10-21); archived ones are in `docs/archive/`.
 
 ## Summary of the review chat
 

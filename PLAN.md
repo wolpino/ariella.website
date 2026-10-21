@@ -1,60 +1,28 @@
 # Plan — ariella.website
 
-Living build plan. Update when scope changes. PR checklist: [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md). Decisions: [docs/DECISION_LOG.md](docs/DECISION_LOG.md).
+Personal site for Ariella Wolpin. One Next.js (TypeScript) app on Vercel. The domain is live on this app.
 
-## Goal
+The step-by-step plan is [docs/DESIGN-RESET.md](docs/DESIGN-RESET.md). Decisions are in [docs/DECISION_LOG.md](docs/DECISION_LOG.md).
 
-Single Next.js (TypeScript) app on Vercel. **Professional** default theme. **Fun home** is the composition notebook under the existing header. Hub for projects; satellites linked out.
+## Now
 
-**Current work:** port the notebook, editions, and studio, with tests, and stop at a Vercel preview. Full instructions: [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md).
+1. Step 2: mockups. Ari reacts to pixels before anything changes in the repo.
+2. Step 0: fix the live copy before the link is shared anywhere.
+3. Step 3: build the chosen design as one site, with no theme toggle.
 
-**Later:** About, collections, notes. Attaching `ariella.website` is not part of the current work.
+## Later (re-plan against the chosen design)
 
-## PR map
-
-| PR | Ships |
-|----|--------|
-| **PR1** | Done. Docs spine; SPEC; Next scaffold; theme config + toggle; layout shell |
-| **PR2** | Done. Home / Projects / Contact; Fun styling; content files; quality bar |
-| **PR3** | Deferred. Do not attach the domain while the notebook port is in progress |
-| **NF1–NF6** | Notebook Fun port. See [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md) and [docs/PULL_REQUESTS.md](docs/PULL_REQUESTS.md) |
-| **PR4** | About (Résumé/Story); richer projects hub |
-| **PR5** | `CollectionStack` + lightbox; 1–2 collections |
-| **PR6** | Notes scaffold; more collections |
-
-Workflow: implement chunk → small commits → you verify → fixes → write `docs/PHASE-*.md` → next chunk.
+- About (résumé and story)
+- Photo collections with a lightbox
+- Notes
 
 ## Non-negotiables
 
-1. Responsive / mobile-first  
-2. Accessibility  
-3. Image performance  
-4. Theme reliability (Professional default, no flash)  
-5. Recruiter clarity  
+1. Mobile first
+2. Accessibility: keyboard, AA contrast, reduced motion
+3. Image performance
+4. Recruiters reach who Ari is, the résumé, and LinkedIn fast
 
-## Theme
+## Out of scope
 
-```ts
-// themes/professional.ts & themes/fun.ts → CSS variables
-```
-
-Projects and Contact use `var(--*)` only. `/` may render a different component tree for Fun (the notebook). Persist preference (cookie + localStorage). Default remains `professional`.
-
-**Fun home:** high-fidelity composition notebook under `SiteHeader`. See [docs/NOTEBOOK-FUN-PLAN.md](docs/NOTEBOOK-FUN-PLAN.md).
-
-**Projects and Contact in Fun:** still the photobooth + pinball styling in [docs/FUN-THEME.md](docs/FUN-THEME.md). That metaphor is no longer the home page.
-
-## Photography
-
-| Experience | Where | When |
-|------------|-------|------|
-| Feed | `photos.ariella.website` | Link in PR2 |
-| Collections (overlap + lightbox) | This site | PR5 |
-
-## About (PR4)
-
-Same data, two views: **Résumé** | **Story**. Expandable roles. Independent of Professional/Fun.
-
-## Explicitly out of scope for now
-
-Monorepo, merging feed app, CMS, auth, waiting on blog copy before deploy.
+Monorepo, CMS, auth, merging the photo feed app. `photos.ariella.website` stays its own project.

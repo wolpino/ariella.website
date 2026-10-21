@@ -1,6 +1,6 @@
 # Source images
 
-**Archive for the Fun home.** “Notebook motif — parked” describes the July 2026 exploration. The live notebook port copies textures from `/Users/ari/codes/ariellawebsite` at the commit in [docs/NOTEBOOK-FUN-PLAN.md](../docs/NOTEBOOK-FUN-PLAN.md). Do not treat this table as a reason to skip that port. `kitchenwindow.jpg` is still the source of the Professional `window-fan.jpg` texture.
+**Archive for the Fun home.** “Notebook motif — parked” describes the July 2026 exploration. The live notebook port copies textures from `/Users/ari/codes/ariellawebsite` at the commit in [docs/NOTEBOOK-FUN-PLAN.md](../docs/archive/NOTEBOOK-FUN-PLAN.md). Do not treat this table as a reason to skip that port. `kitchenwindow.jpg` is still the source of the Professional `window-fan.jpg` texture.
 
 Reference photos for older Fun theme assets. Processed textures live in `public/textures/`; strip frames in `public/fun-strip/`. Full-res camera dumps in `images/photos/` stay local (not committed).
 
@@ -17,4 +17,4 @@ Reference photos for older Fun theme assets. Processed textures live in `public/
 | `photos/PXL_20231123_015816684.jpg` | Pinball + booth strips (glow-on-black) |
 | `photos/PXL_20240307_*.jpg` etc. | Photobooth strip mood (pattern/contrast, not site content) |
 
-See [docs/FUN-THEME.md](../docs/FUN-THEME.md) and [docs/HANDOFF-FUN-THEME.md](../docs/HANDOFF-FUN-THEME.md).
+See [docs/FUN-THEME.md](../docs/archive/FUN-THEME.md) and [docs/HANDOFF-FUN-THEME.md](../docs/archive/HANDOFF-FUN-THEME.md).
