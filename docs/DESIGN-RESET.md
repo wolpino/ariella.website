@@ -1,8 +1,21 @@
 # Design reset — 2026-10-20
 
-> **Resume here.** Step 1 (slim the docs) done 2026-10-21. Step 2 (mockups) in progress: round 4 is out for review (picks so far are in the DECISION_LOG 2026-10-21 entries). Step 0 waits until before the link is shared; it still needs two answers from Ari:
-> 1. Which projects go on the Projects page? (If none yet, hide the `coming-soon` cards.)
-> 2. Is the Gmail address printed in `public/resume.pdf` and `content/resume.ts` OK to keep public?
+> **Resume here: next session starts Step 0.**
+>
+> **Where things stand (2026-10-21):**
+> - Step 1 (slim the docs) is done.
+> - Step 2 (mockups) is done for now. Final mockup: https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz. All picks are in `docs/DECISION_LOG.md`, the 2026-10-21 entries.
+> - The docs PR for this branch (`docs/design-reset`) should be merged before Step 0 starts. If it isn't merged yet, merge it first.
+>
+> **To start Step 0, say:** "Start Step 0 from docs/DESIGN-RESET.md."
+>
+> **Step 0 needs two answers from Ari before any code:**
+> 1. Which projects go on the Projects page? Real names, one line each, and a link if there is one. If the list isn't ready, hide the `coming-soon` cards.
+> 2. `public/resume.pdf` and the résumé pop-up (`content/resume.ts`) show `ariwolpin@gmail.com`. Keep it, or swap in a version without it?
+>
+> **Then Step 0 does, in small steps:** pull `main`, branch `fix/live-copy`, remove the placeholder email and the TODO text on Contact, add a Résumé link in the header, fix the project cards, update the e2e tests, run lint, build and tests, and open a PR. Ari merges, and merging deploys.
+>
+> Step 0 only fixes the live words. The new look is Step 3.
 
 Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs were archived or rewritten in Step 1 (2026-10-21); archived ones are in `docs/archive/`.
 

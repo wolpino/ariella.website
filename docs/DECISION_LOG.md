@@ -245,3 +245,10 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Name and title font:** still undecided; revisit later. It may clash with the small all-caps mono labels (menu, project type lines). Round 8 tests lowercase labels.
 - **Home link:** the open notebook should still say home. Round 8 writes "home" on it in the cover marker, always visible or on hover only (always visible on touch screens).
 - **Footer:** replace the plain name with a specific copyright line saying the photos are Ari's own.
+
+## 2026-10-21 — Mockups round 8 reaction (design settled for now)
+
+- **Home link:** the open notebook with a HOME label under it in the same style as the menu (small caps), always visible, so it reads as part of the header. Gold on hover.
+- **Small labels:** stay in caps for now.
+- **Still open, revisit during the build:** the name and title font; the cover image (more three-dimensional, maybe gold).
+- **Final mockup:** https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz (private to Ari). Earlier rounds are history.
