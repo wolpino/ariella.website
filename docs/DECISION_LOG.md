@@ -210,3 +210,11 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **A:** Felt odd. Try no film on Projects: white-border photos like Home, either on the desk or taped into a notebook page. Round 4 shows both.
 - **Q:** Tape?
 - **A:** Finalize later, during the build. The plan should say so.
+
+## 2026-10-21 — Mockups round 4 reaction
+
+- **Home:** no film strip and no tagline. A tagline is fine later if it sounds like Ari; the drafted one didn't.
+- **Projects:** on the desk, not notebook paper. White-border photos with no tape and no grease-pencil circle; the gold glow on hover is the highlight. Keep the gold type labels under each image. Straight or tilted photos still open.
+- **Home link:** open notebook, quiet by default; on hover the tape and the "Ari Wolpin" name turn gold.
+- **Title:** say "Projects" once, either as the serif title or as red tape. More space between the header and the title.
+- **Tape:** may be a home-page-only thing. Inner pages could use plain text nav (keeping the color per section). Round 5 shows both.
