@@ -36,10 +36,6 @@ export default function ContactPage() {
               </li>
             ))}
           </ul>
-          <p className="contact-note">
-            Prefer a different email or social? Update{" "}
-            <code>content/site.ts</code> — placeholders are intentional for MVP.
-          </p>
         </div>
       </div>
     </div>
