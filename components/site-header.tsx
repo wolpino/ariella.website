@@ -16,6 +16,14 @@ export function SiteHeader({ initialTheme }: { initialTheme: ThemeId }) {
               {item.label}
             </Link>
           ))}
+          <a
+            href={site.resumePdfPath}
+            className="site-header__link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Résumé
+          </a>
         </nav>
         <ThemeToggle initialTheme={initialTheme} />
       </div>

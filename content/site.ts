@@ -26,8 +26,6 @@ export const site = {
   /** Fun Home lockup — Wix used “collections” under the name */
   funHeading: "collections",
   funTopics: ["photography", "web applications", "notes"] as const,
-  /** TODO: replace with your preferred public email */
-  email: "hello@ariella.website",
   nav: [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
@@ -40,10 +38,9 @@ export const site = {
       external: true,
     },
     {
-      label: "Email",
-      href: "mailto:hello@ariella.website",
-      external: false,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/ariellawolpin",
+      external: true,
     },
-    // TODO: add LinkedIn / GitHub / Instagram when ready
   ] as const satisfies readonly SocialLink[],
 };

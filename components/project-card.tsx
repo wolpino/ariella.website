@@ -26,7 +26,7 @@ export function ProjectCard({ project }: Props) {
         <span />
       </div>
       <p className="composition-label__lede">{project.summary}</p>
-      {!isSoon ? (
+      {!isSoon && project.href ? (
         <span className="composition-label__cta">
           {project.external ? "Open project" : "View"} →
         </span>
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: Props) {
     </>
   );
 
-  if (isSoon) {
+  if (isSoon || !project.href) {
     return <article className={className}>{body}</article>;
   }
 

@@ -1,6 +1,6 @@
 export type ResumeJob = {
   org: string;
-  title: string;
+  title?: string;
   dates: string;
   href?: string;
   blurb?: string;
@@ -9,7 +9,7 @@ export type ResumeJob = {
 
 export type ResumeEducation = {
   left: string;
-  dates: string;
+  dates?: string;
   bullets: string[];
 };
 
@@ -20,90 +20,93 @@ export type ResumeSkillGroup = {
 
 export const resume = {
   name: "Ariella Wolpin",
-  email: "ariwolpin@gmail.com",
   location: "Seattle, WA",
   linkedin: "https://www.linkedin.com/in/ariellawolpin",
   summary:
-    "Tenacious and adaptive problem solver, thrilled to write maintainable, readable and scalable code. Able to communicate across teams effectively, ensuring technical clarity of requirements and quick resolutions, while sharing a laugh or pet picture. Deep focus on the customer with a strong aptitude to consider multiple perspectives. Passionate about fostering inclusive team cohesion and morale.",
+    "Full-stack Software Engineer with 7+ years of experience translating ambiguous problems into intuitive customer experiences through strong technical judgment, creative thinking, and cross-functional collaboration.",
   skills: [
     {
-      label: "Languages/Protocols",
-      items: "Python, Typescript, Javascript, SQL, Django, React, Node.js, C#",
+      label: "Languages/Frameworks",
+      items: "Python, TypeScript, JavaScript, C#, SQL, Django, React, Node.js",
     },
     {
-      label: "Software/Tools",
-      items:
-        "API integrations, REST, GraphQL, Git, Jira, Kubernetes, Looker, OAuth2, SAML, SSO, Redis, AWS, Unit and E2E testing (Pytest, Cypress, Jest), Sentry, Celery",
+      label: "APIs/Integrations",
+      items: "REST, GraphQL, gRPC, OAuth2, SAML, SSO, Webhooks",
     },
     {
-      label: "Soft",
+      label: "Cloud/Infra",
+      items: "AWS, Lambda, SNS, S3, Kubernetes, Redis, Celery",
+    },
+    {
+      label: "Testing & Reliability",
       items:
-        "documentation, translating technical speak, glue work, navigating (and improving) legacy code",
+        "Pytest, Cypress, Jest, Unit/E2E Testing, Sentry, production debugging",
+    },
+    {
+      label: "AI-Assisted Development",
+      items: "Claude Code, Github Copilot, Cursor",
     },
   ],
   experience: [
     {
+      org: "Personal Sabbatical",
+      dates: "April 2025 - May 2026",
+      bullets: [
+        "Intentional time off to pursue creative work and reboot! Completed and substantially revised my first novel while developing a deeper practice of iterative learning and problem-solving. Built Trial & Eclair, a recipe development application with role-based workflows, using AI-assisted code generation.",
+      ],
+    },
+    {
       org: "Zapier",
       href: "https://zapier.com",
-      title: "Full-stack Software Engineer",
+      title: "Full-stack Software Engineer | Remote",
       dates: "October 2022 - March 2025",
       blurb:
-        "Automated workflows platform with 7000+ integrations that support 3M+ unique users",
+        "Automated workflows platform with 7,000+ integrations that support 3M+ users",
       bullets: [
-        "Full-stack development using Python, React, Typescript, and Node.js to increase reliability and usability for identity management access across entire product for internal and external use",
-        "Resolved 2000+ user deletion failures, implementing improvements which allowed the company to pass audits under the SOC2 framework ensuring compliance with the GDPR/CCPA.",
-        "Collaborated with product and design to iteratively plan new features and prioritize improvements while considering user experience, security risks, and potential blockers",
+        "Resolved 2,000+ failed user-data deletion requests ahead of a SOC 2 audit by tracing errors across deleted database tables, Django Signals, billing domain, and third-party services",
+        "Built full-stack identity management using Python and Typescript, improving reliability and usability of authentication and authorization workflows across the entire product",
+        "Owner for IdP-initiated SSO integrations: evaluated vendor constraints, implemented integrations, and served as a technical bridge between Engineering and Community Marketing",
+        "Led an invite email redesign that increased average invitation acceptance by 3.7%; identified a design constraint early that would have degraded performance and partnered with Design and Product to reduce risk while preserving the core value of the redesign",
+        "Mentored a junior engineer transitioning from support by helping them develop full-stack skills, take technical ownership, and build confidence in engineering discussions",
       ],
     },
     {
       org: "Carta",
       href: "https://carta.com",
-      title: "Software Engineer",
+      title: "Software Engineer | Hybrid",
       dates: "October 2020 - May 2022",
-      blurb:
-        "Global ownership management platform to manage equity with 2.5+ million users",
+      blurb: "Equity and ownership management platform serving 2.5M+ users",
       bullets: [
-        "Full-stack development using Python, React, Typescript, Django and Postgres to automate processes in an investment portfolio product",
-        "Designed and developed a company merge feature with full test coverage, automating a 3 hour manual process with a single click, resulting in 1080 associate hours saved per year",
-        "Designed and implemented third party API integration to fit into existing database structure and replace manual quarterly data collection and review process",
+        "Designed and built a third-party financial-data pipeline that replaced manual quarterly collection and review by fitting external financial data into the platform's existing data model",
+        "Developed a company-merge workflow that preserved source data and audit trails, reducing a three-hour manual process to one click, saving approximately 1,080 associate hours annually",
       ],
     },
     {
       org: "Lighter Capital",
       href: "https://www.lightercapital.com",
-      title: "Software Engineer",
+      title: "Software Engineer | Seattle, WA",
       dates: "January 2019 - October 2020",
-      blurb: "Web application for non-dilutive financing and revenue based loans",
+      blurb: "Web application for non-dilutive financing and revenue-based loans",
       bullets: [
-        "Full-stack development using React/Redux, C#, and SQL to create data driven customer platform",
-        "Designed and led development of modular feature to pull and transform third party financial data utilizing multiple AWS services including SNS, Lambdas and S3 buckets",
-        "Redesigned third party API integration to utilize webhooks resulting in 60% reduction in errors",
+        "Led the design and implementation of a modular AWS-based data pipeline using Lambda, SNS, and S3 to establish a reusable foundation for future financial-data integrations",
+        "Redesigned a third-party API integration to use webhooks, reducing errors by 60% and improving reliability of downstream workflows",
       ],
     },
     {
       org: "Microsoft",
-      title: "Software Engineer",
+      title: "Software Engineer | Redmond, WA",
       dates: "January 2018 - December 2018",
       bullets: [
-        "Developed and maintained dashboard in C# and Javascript used to manage entire pipeline of Windows updates, from initial bug to post-release monitoring, with 14K+ views/month",
-        "Consumed and created internal Web APIs to pull, store and process raw data from 20+ teams",
+        "Developed APIs to pull, store and process data from 20+ teams into a C# and JavaScript dashboard used to manage the Windows Update pipeline which received 14K+ views/month",
       ],
     },
   ] satisfies ResumeJob[],
   education: [
     {
-      left: "Registered Apprenticeship via Washington Technology\nIndustry Association – Seattle, WA",
-      dates: "Fall 2017",
-      bullets: [
-        "Classroom and on-the-job SWE training w/focus on Python and C#",
-      ],
-    },
-    {
-      left: "Lewis & Clark College – Portland, OR",
-      dates: "B.A. May 2010",
-      bullets: ["German Studies Major, Religious Studies Minor"],
+      left: "Lewis & Clark College | B.A., German Studies | Portland, OR",
+      bullets: [],
     },
   ] satisfies ResumeEducation[],
   interests:
-    "learning how to write a novel, arts & crafts projects (mostly gluing things together), walking my dog, rearranging my plant wall, making people laugh",
+    "learning how to write novels, baking elaborate birthday cakes, my dog, making people laugh",
 } as const;

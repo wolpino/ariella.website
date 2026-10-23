@@ -252,3 +252,8 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Small labels:** stay in caps for now.
 - **Still open, revisit during the build:** the name and title font; the cover image (more three-dimensional, maybe gold).
 - **Final mockup:** https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz (private to Ari). Earlier rounds are history.
+
+## 2026-10-23 — Step 0 answers
+
+- **Projects page:** Trial & Eclair is the only project for now, plus one "More coming soon" card. No link for Trial & Eclair yet. The photography feed card is off Projects; the feed stays on Contact.
+- **Résumé email:** Ari supplied a new résumé PDF without the email. The pop-up (`content/resume.ts`) now matches that PDF and shows no email either.

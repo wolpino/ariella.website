@@ -12,8 +12,7 @@ function Job({ org, title, dates, href, blurb, bullets }: ResumeJob) {
           ) : (
             org
           )}
-          {" | "}
-          {title}
+          {title ? ` | ${title}` : null}
         </p>
         <p className="resume-job-dates">{dates}</p>
       </div>
@@ -39,13 +38,15 @@ function School({ left, dates, bullets }: ResumeEducation) {
             </span>
           ))}
         </p>
-        <p className="resume-job-dates">{dates}</p>
+        {dates ? <p className="resume-job-dates">{dates}</p> : null}
       </div>
-      <ul>
-        {bullets.map((bullet) => (
-          <li key={bullet}>{bullet}</li>
-        ))}
-      </ul>
+      {bullets.length > 0 ? (
+        <ul>
+          {bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      ) : null}
     </article>
   );
 }
@@ -55,8 +56,6 @@ export function ResumeDocument() {
     <article className="resume-page">
       <p className="resume-name">{resume.name}</p>
       <p className="resume-contact">
-        <a href={`mailto:${resume.email}`}>{resume.email}</a>
-        {" | "}
         <a href={resume.linkedin} target="_blank" rel="noreferrer">
           {resume.linkedin}
         </a>
@@ -79,7 +78,7 @@ export function ResumeDocument() {
 
       <h2>Education</h2>
       {resume.education.map((school) => (
-        <School key={school.dates} {...school} />
+        <School key={school.left} {...school} />
       ))}
 
       <p className="resume-interests">
