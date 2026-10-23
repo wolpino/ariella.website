@@ -8,6 +8,10 @@ async function expectHeader(page: Page) {
   await expect(header.getByRole("link", { name: "Home" })).toBeVisible();
   await expect(header.getByRole("link", { name: "Projects" })).toBeVisible();
   await expect(header.getByRole("link", { name: "Contact" })).toBeVisible();
+  await expect(header.getByRole("link", { name: "Résumé" })).toHaveAttribute(
+    "href",
+    "/resume.pdf",
+  );
   await expect(
     header.getByRole("button", { name: "Professional" }),
   ).toBeVisible();
@@ -252,6 +256,51 @@ test("fun home resume query opens the resume dialog", async ({
   await expect(
     dialog.getByRole("link", { name: "Download PDF" }),
   ).toBeVisible();
+});
+
+test("contact lists LinkedIn and no placeholder email or note", async ({
+  page,
+}) => {
+  await page.goto("/contact");
+  await expect(page.getByRole("link", { name: /LinkedIn/ })).toHaveAttribute(
+    "href",
+    "https://www.linkedin.com/in/ariellawolpin",
+  );
+  await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
+  await expect(page.getByText("hello@ariella.website")).toHaveCount(0);
+  await expect(page.getByText("placeholders are intentional")).toHaveCount(0);
+});
+
+test("projects shows Trial & Eclair and one coming-soon card", async ({
+  page,
+}) => {
+  await page.goto("/projects");
+  await expect(
+    page.getByRole("heading", { level: 2, name: "Trial & Eclair" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { level: 2, name: "More coming soon" }),
+  ).toBeVisible();
+  await expect(page.getByText("Placeholder until repos")).toHaveCount(0);
+});
+
+test("resume dialog shows no email address", async ({
+  page,
+  context,
+  baseURL,
+}) => {
+  await context.addCookies([
+    {
+      name: "ariella-theme",
+      value: "fun",
+      url: baseURL ?? "http://127.0.0.1:3000",
+    },
+  ]);
+  await page.goto("/?resume=1");
+  const dialog = page.getByRole("dialog", { name: "Resume" });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('a[href^="mailto:"]')).toHaveCount(0);
+  await expect(dialog.getByText("Personal Sabbatical")).toBeVisible();
 });
 
 for (const asset of [
