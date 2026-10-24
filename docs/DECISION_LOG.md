@@ -257,3 +257,9 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 
 - **Projects page:** Trial & Eclair is the only project for now, plus one "More coming soon" card. No link for Trial & Eclair yet. The photography feed card is off Projects; the feed stays on Contact.
 - **Résumé email:** Ari supplied a new résumé PDF without the email. The pop-up (`content/resume.ts`) now matches that PDF and shows no email either.
+
+## 2026-10-24 — Tape readability
+
+- **Q:** The glossy band on the cover tape dropped white-letter contrast below 4.5:1 (green 3.2:1). Keep the look or fix it?
+- **A:** Readable over appearance.
+- **Implication:** Tape colors darkened (red `#a8261e`, blue `#23488c`, green `#1d6b40`, all 6.3:1 or better with white) and the gloss kept to a thin band above the letters.

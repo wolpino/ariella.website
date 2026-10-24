@@ -13,10 +13,10 @@
   --paper: #f6f3ec;
   --pen: #26314d;
 
-  /* Dymo tape colors */
-  --tape-red: #c23128;
-  --tape-blue: #2c58a6;
-  --tape-green: #2a8250;
+  /* Dymo tape colors, dark enough for white letters (6.3:1 or better) */
+  --tape-red: #a8261e;
+  --tape-blue: #23488c;
+  --tape-green: #1d6b40;
   --tape-black: #161616;
 
   --display: var(--font-display), Georgia, serif;

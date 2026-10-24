@@ -153,7 +153,8 @@
   pointer-events: none;
 }
 
-/* Shiny Dymo plastic: glossy band, embossed white letters, no grain. */
+/* Shiny Dymo plastic: a thin gloss above the letters, embossed white letters, no grain.
+   The letters sit on the flat color so they stay readable. */
 .tape {
   --r: 0deg;
   --tc: var(--tape-black);
@@ -173,19 +174,18 @@
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.42) 0,
-      rgba(255, 255, 255, 0.12) 38%,
-      rgba(0, 0, 0, 0) 46%,
-      rgba(0, 0, 0, 0.12) 88%,
-      rgba(255, 255, 255, 0.1) 100%
+      rgba(255, 255, 255, 0.34) 0,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0) 26%,
+      rgba(0, 0, 0, 0) 74%,
+      rgba(0, 0, 0, 0.12) 92%,
+      rgba(255, 255, 255, 0.08) 100%
     ),
     linear-gradient(var(--tc), var(--tc));
   border-radius: 2px;
   text-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.45),
-    0 -1px 0 rgba(255, 255, 255, 0.9),
-    1px 0 0 rgba(0, 0, 0, 0.15),
-    -1px 0 0 rgba(255, 255, 255, 0.35);
+    0 1px 0 rgba(0, 0, 0, 0.5),
+    0 -1px 0 rgba(255, 255, 255, 0.25);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.55),
     inset 0 -2px 2px rgba(0, 0, 0, 0.25),
