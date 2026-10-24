@@ -1,11 +1,14 @@
 import { expect, test, type Page } from "@playwright/test";
-import { deskPhotos } from "../content/photos";
+import { site } from "../content/site";
 
 const LINKEDIN = "https://www.linkedin.com/in/ariellawolpin";
 const PHOTOS = "https://photos.ariella.website/";
 const COPYRIGHT = /All photographs © \d{4} Ariella Wolpin/;
 
 const mobile = { width: 390, height: 844 };
+
+const STICKY_TEXT = "This website is a work in progress! Check back soon...";
+const LAST_UPDATED = new RegExp(`last updated:?\\s*${site.lastUpdated}`, "i");
 
 /** The inner-page header: Home link plus a Main nav with Projects and Résumé only. */
 async function expectSiteHeader(page: Page) {
@@ -51,6 +54,21 @@ async function expectResumeDialog(page: Page) {
   return dialog;
 }
 
+/** No desk photos, prints, or lightbox on the wood home. */
+async function expectNoDeskPhotos(page: Page) {
+  await expect(page.locator(".home-shot")).toHaveCount(0);
+  await expect(
+    page.locator('img[src*="/photos/"], img[src*="%2Fphotos%2F"]'),
+  ).toHaveCount(0);
+}
+
+async function expectHomeSticky(page: Page) {
+  const sticky = page.locator(".home-sticky");
+  await expect(sticky).toBeVisible();
+  await expect(sticky).toContainText(STICKY_TEXT);
+  await expect(sticky).toContainText(LAST_UPDATED);
+}
+
 test.describe("home", () => {
   test("shows the name, the notebook tapes, and no inner header", async ({
     page,
@@ -62,6 +80,7 @@ test.describe("home", () => {
 
     const nav = page.getByRole("navigation", { name: "Main" });
     await expect(nav.getByRole("link")).toHaveCount(3);
+    await expect(nav.locator(".tape")).toHaveCount(3);
     await expect(nav.getByRole("link", { name: "Projects" })).toHaveAttribute(
       "href",
       "/projects",
@@ -72,11 +91,28 @@ test.describe("home", () => {
       "/resume.pdf",
     );
     const linkedIn = nav.getByRole("link", { name: "LinkedIn" });
-    await expect(linkedIn).toHaveAttribute("href", LINKEDIN);
+    await expect(linkedIn).toHaveAttribute("href", site.linkedIn);
     await expect(linkedIn).toHaveAttribute("target", "_blank");
 
     await expectNoSiteHeader(page);
     await expect(page.getByText(COPYRIGHT)).toBeVisible();
+  });
+
+  test("shows the notebook cover label and the work-in-progress sticky", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await expect(page.locator(".cover-book")).toBeVisible();
+    for (const text of [site.cover.name, site.cover.subject, site.cover.also]) {
+      await expect(page.getByText(text, { exact: true })).toBeVisible();
+    }
+    await expectHomeSticky(page);
+  });
+
+  test("has no desk photos and no lightbox", async ({ page }) => {
+    await page.goto("/");
+    await expectNoDeskPhotos(page);
+    await expect(page.getByRole("main").getByRole("button")).toHaveCount(0);
   });
 
   test("Projects tape goes to /projects", async ({ page }) => {
@@ -106,65 +142,73 @@ test.describe("home", () => {
     await expect(dialog).toHaveCount(0);
   });
 
-  test("desk photos open a lightbox that Escape closes, returning focus", async ({
+  test("Résumé tape uses the dymo-resume photo", async ({ page }) => {
+    await page.goto("/");
+    const resume = page
+      .getByRole("navigation", { name: "Main" })
+      .getByRole("link", { name: "Résumé" });
+    await expect(resume.locator("img.tape__photo")).toHaveAttribute(
+      "src",
+      /dymo-resume/,
+    );
+  });
+
+  test("every tape photo loads and marks its tape as loaded", async ({
     page,
   }) => {
     await page.goto("/");
-    const photos = page.getByRole("main").getByRole("button");
-    await expect(photos).toHaveCount(4);
-    for (const photo of deskPhotos.slice(0, 4)) {
-      await expect(
-        page.getByRole("button", { name: new RegExp(photo.caption) }),
-      ).toBeVisible();
+    await page.waitForLoadState("load");
+    const photos = page.locator("img.tape__photo");
+    const count = await photos.count();
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i++) {
+      const photo = photos.nth(i);
+      await expect
+        .poll(() =>
+          photo.evaluate((img: HTMLImageElement) =>
+            img.complete ? img.naturalWidth : 0,
+          ),
+        )
+        .toBeGreaterThan(0);
+      await expect
+        .poll(() =>
+          photo.evaluate(
+            (img) => img.closest(".tape")?.getAttribute("data-photo") ?? null,
+          ),
+        )
+        .toBe("loaded");
     }
-
-    const first = deskPhotos[0];
-    const opener = page.getByRole("button", { name: new RegExp(first.caption) });
-    await opener.click();
-
-    const lightbox = page.getByRole("dialog", { name: first.caption });
-    await expect(lightbox).toBeVisible();
-    await expect(lightbox.getByRole("img", { name: first.alt })).toBeVisible();
-    const more = lightbox.getByRole("link", { name: /photos\.ariella\.website/ });
-    await expect(more).toHaveAttribute("href", PHOTOS);
-    await expect(more).toHaveAttribute("target", "_blank");
-
-    await page.keyboard.press("Escape");
-    await expect(lightbox).toHaveCount(0);
-    await expect(opener).toBeFocused();
   });
 
-  test("lightbox Close button closes it", async ({ page }) => {
+  test("Résumé tape falls back to live text when its photo fails", async ({
+    page,
+  }) => {
+    await page.route("**/textures/dymo-resume.png", (route) => route.abort());
     await page.goto("/");
-    const photo = deskPhotos[2];
-    await page.getByRole("button", { name: new RegExp(photo.caption) }).click();
-    const lightbox = page.getByRole("dialog", { name: photo.caption });
-    await expect(lightbox).toBeVisible();
-    await lightbox.getByRole("button", { name: /Close/ }).click();
-    await expect(lightbox).toHaveCount(0);
+    const resume = page
+      .getByRole("navigation", { name: "Main" })
+      .getByRole("link", { name: "Résumé" });
+    await expect(resume).toBeVisible();
+    await expect(resume).toHaveClass(/\btape\b/);
+    await expect(resume).not.toHaveAttribute("data-photo", "loaded");
+    await expect(resume.getByText("Résumé", { exact: true })).toBeVisible();
   });
 });
 
 test.describe("mobile 390x844", () => {
   test.use({ viewport: mobile });
 
-  test("home shows the three tapes, no desk photos, no horizontal scroll", async ({
+  test("home shows the notebook, sticky, three tapes, no desk photos, no horizontal scroll", async ({
     page,
   }) => {
     await page.goto("/");
+    await expect(page.locator(".cover-book")).toBeVisible();
+    await expectHomeSticky(page);
     const nav = page.getByRole("navigation", { name: "Main" });
     for (const name of ["Projects", "Résumé", "LinkedIn"]) {
       await expect(nav.getByRole("link", { name })).toBeVisible();
     }
-    // The prints are in the page but hidden at this width.
-    const main = page.getByRole("main");
-    await expect(main.getByRole("button", { includeHidden: true })).toHaveCount(4);
-    await expect(main.getByRole("button")).toHaveCount(0);
-    for (const photo of deskPhotos.slice(0, 4)) {
-      await expect(
-        page.getByRole("button", { name: new RegExp(photo.caption), includeHidden: true }),
-      ).toBeHidden();
-    }
+    await expectNoDeskPhotos(page);
     await expectNoHorizontalScroll(page);
   });
 
@@ -339,25 +383,45 @@ test("studio shows cover treatments, is not indexed, and has no site header", as
   );
 });
 
-test("an unknown url shows a neutral not-found page", async ({ page }) => {
-  const response = await page.goto("/not-a-page");
-  expect(response?.status()).toBe(404);
+/** Shelby's 404. It has its own Home link, so the header is checked by class. */
+async function expectShelbyNotFound(page: Page) {
   await expect(
     page.getByRole("heading", { level: 1, name: "Page not found" }),
   ).toBeVisible();
-  await expect(page.getByText("This page isn't in the notebook")).toHaveCount(0);
-  await expectNoSiteHeader(page);
-  await expect(page.getByRole("link", { name: "Back home" })).toHaveAttribute(
-    "href",
-    "/",
-  );
+  const photo = page.locator(".not-found__photo");
+  await expect(photo).toBeVisible();
+  await expect(photo.locator("img")).toHaveAttribute("src", /shelby/);
+  await expect(photo).toContainText("Shelby ate it");
+  const home = page.getByRole("link", { name: "Home", exact: true });
+  await expect(home).toHaveClass(/\bnot-found__home\b/);
+  await expect(home).toHaveAttribute("href", "/");
+  await expect(page.locator(".site-head")).toHaveCount(0);
+  await expect(page.getByRole("banner")).toHaveCount(0);
+}
+
+test("an unknown url shows Shelby's not-found page", async ({ page }) => {
+  const response = await page.goto("/not-a-page");
+  expect(response?.status()).toBe(404);
+  await expectShelbyNotFound(page);
+});
+
+test.describe("not-found at 390x844", () => {
+  test.use({ viewport: mobile });
+
+  test("shows Shelby with no horizontal scroll", async ({ page }) => {
+    const response = await page.goto("/not-a-page");
+    expect(response?.status()).toBe(404);
+    await expectShelbyNotFound(page);
+    await expectNoHorizontalScroll(page);
+  });
 });
 
 for (const asset of [
   "/resume.pdf",
   "/textures/notebook-marble.jpg",
   "/editions/shelby.jpg",
-  ...deskPhotos.map((photo) => photo.src),
+  "/textures/wood-desk.jpg",
+  "/textures/dymo-resume.png",
   "/photos/kitchen-light.jpg",
 ]) {
   test(`${asset} returns 200`, async ({ request }) => {
