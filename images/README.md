@@ -2,7 +2,7 @@
 
 **Archive for the Fun home.** “Notebook motif — parked” describes the July 2026 exploration. The live notebook port copies textures from `/Users/ari/codes/ariellawebsite` at the commit in [docs/NOTEBOOK-FUN-PLAN.md](../docs/archive/NOTEBOOK-FUN-PLAN.md). Do not treat this table as a reason to skip that port. `kitchenwindow.jpg` is still the source of the Professional `window-fan.jpg` texture.
 
-Reference photos for older Fun theme assets. Processed textures live in `public/textures/`; strip frames in `public/fun-strip/`. Full-res camera dumps in `images/photos/` stay local (not committed).
+Reference photos. Processed textures live in `public/textures/`; resized site photos in `public/photos/`. Full-res camera dumps in `images/photos/` stay local (not committed).
 
 | File | Use |
 |------|-----|

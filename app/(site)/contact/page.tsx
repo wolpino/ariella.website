@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageTitle } from "@/components/page-title";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export default function ContactPage() {
     <div className="fun-surface fun-surface--open">
       <div className="page-block page-block--narrow">
         <header className="section-head section-head--page">
-          <PageTitle>Contact</PageTitle>
+          <h1>Contact</h1>
           <p className="section-head__open-lede">
             Reach out for work, collabs, or just to say hi.
           </p>
@@ -23,14 +22,12 @@ export default function ContactPage() {
                 <a
                   href={item.href}
                   className="contact-list__link"
-                  {...(item.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="contact-list__label">{item.label}</span>
                   <span className="contact-list__value">
-                    {item.href.replace(/^mailto:/, "")}
-                    {item.external ? " ↗" : ""}
+                    {item.href} ↗
                   </span>
                 </a>
               </li>
