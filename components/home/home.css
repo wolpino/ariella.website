@@ -1,0 +1,348 @@
+/* Home: the closed notebook on the desk. Sizes and positions follow the final mockup (2026-10-21). */
+
+.home {
+  container: home / inline-size;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Top bar: just the name */
+
+.home-top {
+  display: flex;
+  padding: 18px var(--gutter) 0;
+}
+
+.home-name {
+  font: 400 26px/1 var(--display);
+}
+
+.home-name a {
+  display: inline-block;
+  color: var(--ink);
+  transition: color var(--ease);
+}
+
+.home-name a:hover,
+.home-name a:focus-visible {
+  color: var(--gold);
+  outline: none;
+}
+
+/* The scene: notebook centered, prints scattered around it */
+
+.home-scene {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 560px;
+  padding: 36px 16px 56px;
+  background:
+    radial-gradient(ellipse 40% 30% at 85% 15%, rgba(255, 40, 140, 0.1), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 12% 85%, rgba(60, 120, 255, 0.1), transparent 70%);
+}
+
+.home-shot {
+  position: absolute;
+  z-index: 1;
+}
+
+.home-shot--1 {
+  width: min(220px, 19cqw);
+  left: 5%;
+  top: 8%;
+}
+
+.home-shot--2 {
+  width: min(200px, 17cqw);
+  right: 6%;
+  top: 5%;
+}
+
+.home-shot--3 {
+  width: min(180px, 15cqw);
+  left: 9%;
+  bottom: 6%;
+}
+
+.home-shot--4 {
+  width: min(170px, 14cqw);
+  right: 9%;
+  bottom: 8%;
+}
+
+/* Notebook cover */
+
+.cover-book {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 62cqw);
+  aspect-ratio: 7.5 / 9.75;
+  border-radius: 4px 12px 12px 4px;
+  background: url("/textures/notebook-marble.jpg") center / cover, #222;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 90px 10px rgba(227, 168, 69, 0.12);
+}
+
+/* Spine */
+.cover-book::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 15%;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(90deg, #0b0b0b, #1d1d1d 70%, #0e0e0e);
+}
+
+.cover-label {
+  position: absolute;
+  left: 24%;
+  right: 9%;
+  top: 12%;
+  padding: 14px 16px 12px;
+  background: #fbfaf6;
+  border: 2px solid #111;
+  border-radius: 14px;
+  color: #111;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cover-kind {
+  margin: 0 0 12px;
+  font: 700 11px/1 var(--sans);
+  font-stretch: 110%;
+  letter-spacing: 0.32em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cover-field {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #222;
+}
+
+.cover-field span {
+  font: 600 9.5px/1 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cover-field b {
+  font: 400 clamp(18px, 2.4cqw, 24px) / 1.1 var(--hand);
+  color: var(--pen);
+}
+
+.cover-field b.cover-field__sm {
+  font-size: clamp(13px, 1.7cqw, 16px);
+}
+
+/* Dymo tapes stuck on the lower half of the cover */
+
+.cover-tapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Shiny Dymo plastic: glossy band, embossed white letters, no grain. */
+.tape {
+  --r: 0deg;
+  --tc: var(--tape-black);
+  position: absolute;
+  display: inline-block;
+  pointer-events: auto;
+  padding: 0.66em 0.5em 0.66em 0.8em;
+  font-family: var(--sans);
+  font-size: clamp(11px, 1.5cqw, 14px);
+  font-stretch: 118%;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fbfbf8;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.42) 0,
+      rgba(255, 255, 255, 0.12) 38%,
+      rgba(0, 0, 0, 0) 46%,
+      rgba(0, 0, 0, 0.12) 88%,
+      rgba(255, 255, 255, 0.1) 100%
+    ),
+    linear-gradient(var(--tc), var(--tc));
+  border-radius: 2px;
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.45),
+    0 -1px 0 rgba(255, 255, 255, 0.9),
+    1px 0 0 rgba(0, 0, 0, 0.15),
+    -1px 0 0 rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+    inset 0 3px 0 -2px rgba(0, 0, 0, 0.18),
+    inset 0 -4px 0 -3px rgba(255, 255, 255, 0.18),
+    0 2px 3px rgba(0, 0, 0, 0.6);
+  transform: rotate(var(--r));
+  transition:
+    box-shadow var(--ease),
+    transform var(--ease);
+}
+
+.tape:hover,
+.tape:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px var(--gold),
+    0 0 26px 4px var(--glow);
+  transform: rotate(var(--r)) translateY(-1px);
+  outline: none;
+}
+
+.tape--red {
+  --tc: var(--tape-red);
+}
+
+.tape--blue {
+  --tc: var(--tape-blue);
+}
+
+.tape--green {
+  --tc: var(--tape-green);
+}
+
+.tape--1 {
+  --r: -3deg;
+  left: 22%;
+  top: 58%;
+}
+
+.tape--2 {
+  --r: 2.5deg;
+  left: 44%;
+  top: 69%;
+}
+
+.tape--3 {
+  --r: -1.5deg;
+  left: 27%;
+  top: 80%;
+}
+
+/* Lightbox */
+
+.home-lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(10, 9, 8, 0.92);
+  animation: home-lb-fade 200ms ease;
+}
+
+.home-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 51;
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  width: fit-content;
+  height: fit-content;
+  max-width: min(900px, calc(100vw - 32px));
+  margin: auto;
+  animation: home-lb-fade 200ms ease;
+}
+
+.home-lb:focus {
+  outline: none;
+}
+
+/* Natural size at most, never wider than the screen or taller than 72vh. */
+.home-lb__img {
+  display: block;
+  width: min(var(--w), 900px, calc(100vw - 32px), calc(72vh * var(--ar)));
+  height: auto;
+  box-shadow: 0 0 60px rgba(227, 168, 69, 0.2);
+}
+
+.home-lb__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.home-lb__cap {
+  font: 400 22px/1.2 var(--display);
+  color: var(--ink);
+}
+
+.home-lb__link {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.home-lb__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-lb__close {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top, 0px));
+  right: max(14px, env(safe-area-inset-right, 0px));
+  padding: 8px 12px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  font: 500 12px/1 var(--mono);
+  cursor: pointer;
+  transition: border-color var(--ease);
+}
+
+.home-lb__close:hover {
+  border-color: var(--gold);
+}
+
+@keyframes home-lb-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Phones: just the notebook */
+
+@container home (max-width: 700px) {
+  .home-scene {
+    min-height: 0;
+    place-items: start center;
+    padding: 28px 16px 30px;
+  }
+
+  /* Keep "COMPOSITION BOOK" on one line on the narrower label. */
+  .cover-kind {
+    letter-spacing: 0.22em;
+  }
+
+  .home-shot {
+    display: none;
+  }
+
+  .cover-book {
+    width: min(320px, 84cqw);
+  }
+}
