@@ -1,22 +1,36 @@
-/* Home: the closed notebook on the desk. Sizes and positions follow the final mockup (2026-10-21). */
+/* Home: the closed notebook alone on the wood desk.
+   Look and sizes follow the Step 4 mockup (2026-10-24): the edition 2 cover, color tape, lime sticky. */
 
 .home {
-  container: home / inline-size;
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow-x: clip;
+  background: #3a2714 url("/textures/wood-desk.jpg") center / cover;
 }
 
-/* Top bar: just the name */
+/* Top bar: just the name, on a soft dark fade so it reads over the wood */
 
 .home-top {
+  position: relative;
+  z-index: 3;
   display: flex;
   padding: 18px var(--gutter) 0;
 }
 
+.home-top::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -40px;
+  z-index: -1;
+  background: linear-gradient(rgba(14, 10, 6, 0.55), rgba(14, 10, 6, 0));
+  pointer-events: none;
+}
+
 .home-name {
   font: 400 26px/1 var(--display);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .home-name a {
@@ -31,118 +45,183 @@
   outline: none;
 }
 
-/* The scene: notebook centered, prints scattered around it */
+/* Footer on a dark band */
+
+.home .site-foot {
+  border-top-color: rgba(255, 255, 255, 0.08);
+  background: rgba(16, 12, 8, 0.82);
+  color: #b9b0a0;
+}
+
+/* The scene: notebook centered */
 
 .home-scene {
-  position: relative;
   flex: 1;
   display: grid;
   place-items: center;
-  min-height: 560px;
-  padding: 36px 16px 56px;
-  background:
-    radial-gradient(ellipse 40% 30% at 85% 15%, rgba(255, 40, 140, 0.1), transparent 70%),
-    radial-gradient(ellipse 40% 30% at 12% 85%, rgba(60, 120, 255, 0.1), transparent 70%);
+  padding: 24px 16px 34px;
 }
 
-.home-shot {
-  position: absolute;
-  z-index: 1;
-}
-
-.home-shot--1 {
-  width: min(220px, 19cqw);
-  left: 5%;
-  top: 8%;
-}
-
-.home-shot--2 {
-  width: min(200px, 17cqw);
-  right: 6%;
-  top: 5%;
-}
-
-.home-shot--3 {
-  width: min(180px, 15cqw);
-  left: 9%;
-  bottom: 6%;
-}
-
-.home-shot--4 {
-  width: min(170px, 14cqw);
-  right: 9%;
-  bottom: 8%;
-}
-
-/* Notebook cover */
+/* Notebook cover (edition 2): photographed marble, striped spine.
+   Everything inside is sized in % / cqw of the book, so the phone book is the same book, smaller. */
 
 .cover-book {
   position: relative;
   z-index: 2;
-  width: min(420px, 62cqw);
-  aspect-ratio: 7.5 / 9.75;
-  border-radius: 4px 12px 12px 4px;
-  background: url("/textures/notebook-marble.jpg") center / cover, #222;
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 0 90px 10px rgba(227, 168, 69, 0.12);
+  width: min(450px, 100%);
+  aspect-ratio: 3 / 4;
+  container-type: inline-size;
+  border-radius: 2px 12px 12px 3px;
+  background: #0b0b0b;
+  box-shadow: 12px 22px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Spine */
 .cover-book::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 15%;
-  border-radius: 4px 0 0 4px;
-  background: linear-gradient(90deg, #0b0b0b, #1d1d1d 70%, #0e0e0e);
+  inset: 0;
+  border-radius: inherit;
+  background: url("/textures/notebook-marble.jpg") 0 0 / 180px 180px repeat;
+  filter: contrast(1.05) saturate(0.85);
 }
+
+.cover-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 7.5%;
+  border-radius: 2px 0 0 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #141414 0,
+    #0c0c0c 3px,
+    #1c1c1c 4px,
+    #101010 7px
+  );
+  box-shadow: 6px 0 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Bowed white composition label */
 
 .cover-label {
   position: absolute;
-  left: 24%;
-  right: 9%;
-  top: 12%;
-  padding: 14px 16px 12px;
-  background: #fbfaf6;
-  border: 2px solid #111;
-  border-radius: 14px;
+  z-index: 3;
+  left: 16%;
+  top: 13%;
+  width: 73%;
+  aspect-ratio: 400 / 300;
+  container-type: size;
   color: #111;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.28));
 }
 
-.cover-kind {
-  margin: 0 0 12px;
-  font: 700 11px/1 var(--sans);
-  font-stretch: 110%;
-  letter-spacing: 0.32em;
-  text-align: center;
-  text-transform: uppercase;
+.cover-label__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cover-label__in {
+  position: absolute;
+  inset: 17% 11% 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cover-field {
   display: flex;
   align-items: baseline;
-  gap: 8px;
-  margin-top: 10px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #222;
+  gap: 2.4cqw;
+  margin: 0;
+  padding: 0 1cqw 0.8cqh;
+  border-bottom: 1.5px solid #111;
 }
 
 .cover-field span {
-  font: 600 9.5px/1 var(--sans);
-  letter-spacing: 0.12em;
+  flex: none;
+  font: 700 2.7cqw/1 var(--sans);
+  font-stretch: 112%;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .cover-field b {
-  font: 400 clamp(18px, 2.4cqw, 24px) / 1.1 var(--hand);
-  color: var(--pen);
+  font: 400 6cqw/1 var(--hand);
+  white-space: nowrap;
 }
 
-.cover-field b.cover-field__sm {
-  font-size: clamp(13px, 1.7cqw, 16px);
+.cover-field--name b {
+  font-size: 10.5cqw;
+}
+
+.cover-field--subject b {
+  font-size: 5.3cqw;
+}
+
+.cover-label__meta {
+  margin: 0;
+  font: 500 2.25cqw/1.45 var(--sans);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Lime sticky (edition 2), on the cover's right edge below the label */
+
+.home-sticky {
+  position: absolute;
+  z-index: 5;
+  right: -2cqw;
+  top: 52%;
+  display: grid;
+  align-content: start;
+  width: 33cqw;
+  aspect-ratio: 1;
+  padding: 2.4cqw 2.4cqw 6cqw;
+  background: #c6ff3a;
+  color: #111;
+  text-align: center;
+  rotate: -8deg;
+  box-shadow:
+    1px 1px 0 rgba(0, 0, 0, 0.04),
+    3px 5px 10px rgba(0, 0, 0, 0.32);
+}
+
+/* The folded corner */
+.home-sticky::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6.4cqw;
+  height: 6.4cqw;
+  background: linear-gradient(
+    135deg,
+    #eaff9c 0%,
+    #b4f02a 42%,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.08) 52%,
+    transparent 58%
+  );
+}
+
+.home-sticky p {
+  margin: 0;
+  font: 400 4.1cqw/1.18 var(--hand);
+  letter-spacing: 0.02em;
+}
+
+.home-sticky small {
+  position: absolute;
+  left: 1cqw;
+  right: 1cqw;
+  bottom: 1.7cqw;
+  font: 400 2.45cqw/1 var(--font-pen), "Walter Turncoat", cursive;
+  white-space: nowrap;
 }
 
 /* Dymo tapes stuck on the lower half of the cover */
@@ -150,10 +229,12 @@
 .cover-tapes {
   position: absolute;
   inset: 0;
+  z-index: 4;
   pointer-events: none;
 }
 
-/* Shiny Dymo plastic: a thin gloss above the letters, embossed white letters, no grain.
+/* The drawn Step 3 tape (also the fallback while a tape photo loads or if it fails).
+   Shiny Dymo plastic: a thin gloss above the letters, embossed white letters, no grain.
    The letters sit on the flat color so they stay readable. */
 .tape {
   --r: 0deg;
@@ -163,7 +244,7 @@
   pointer-events: auto;
   padding: 0.66em 0.5em 0.66em 0.8em;
   font-family: var(--sans);
-  font-size: clamp(11px, 1.5cqw, 14px);
+  font-size: clamp(11px, 3.1cqw, 14px);
   font-stretch: 118%;
   font-weight: 700;
   line-height: 1;
@@ -223,126 +304,87 @@
 
 .tape--1 {
   --r: -3deg;
-  left: 22%;
-  top: 58%;
+  left: 15%;
+  top: 61%;
 }
 
 .tape--2 {
   --r: 2.5deg;
-  left: 44%;
-  top: 69%;
+  left: 27%;
+  top: 72.5%;
 }
 
 .tape--3 {
   --r: -1.5deg;
-  left: 27%;
-  top: 80%;
+  left: 17%;
+  top: 84%;
 }
 
-/* Lightbox */
+/* Tape photo layer. Hidden (but loading) until TapePhoto marks the tape loaded. */
 
-.home-lb-overlay {
-  position: fixed;
+.tape__photo {
+  position: absolute;
   inset: 0;
-  z-index: 50;
-  background: rgba(10, 9, 8, 0.92);
-  animation: home-lb-fade 200ms ease;
-}
-
-.home-lb {
-  position: fixed;
-  inset: 0;
-  z-index: 51;
-  display: grid;
-  gap: 12px;
-  justify-items: start;
-  width: fit-content;
-  height: fit-content;
-  max-width: min(900px, calc(100vw - 32px));
-  margin: auto;
-  animation: home-lb-fade 200ms ease;
-}
-
-.home-lb:focus {
-  outline: none;
-}
-
-/* Natural size at most, never wider than the screen or taller than 72vh. */
-.home-lb__img {
-  display: block;
-  width: min(var(--w), 900px, calc(100vw - 32px), calc(72vh * var(--ar)));
-  height: auto;
-  box-shadow: 0 0 60px rgba(227, 168, 69, 0.2);
-}
-
-.home-lb__row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
   width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.home-lb__cap {
-  font: 400 22px/1.2 var(--display);
-  color: var(--ink);
-}
-
-.home-lb__link {
-  font: 500 12px/1 var(--mono);
-  letter-spacing: 0.08em;
-  color: var(--gold);
-}
-
-.home-lb__link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.home-lb__close {
-  position: fixed;
-  top: max(14px, env(safe-area-inset-top, 0px));
-  right: max(14px, env(safe-area-inset-right, 0px));
-  padding: 8px 12px;
+/* Photo loaded: the photo is the tape. A fixed height lets its aspect ratio set the width. */
+.tape[data-photo="loaded"] {
+  padding: 0;
   background: none;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  color: var(--ink);
-  font: 500 12px/1 var(--mono);
-  cursor: pointer;
-  transition: border-color var(--ease);
+  line-height: 0;
+  box-shadow: none;
 }
 
-.home-lb__close:hover {
-  border-color: var(--gold);
+.tape[data-photo="loaded"]:hover,
+.tape[data-photo="loaded"]:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--gold),
+    0 0 26px 4px var(--glow);
 }
 
-@keyframes home-lb-fade {
-  from {
-    opacity: 0;
-  }
+.tape[data-photo="loaded"] .tape__photo {
+  position: static;
+  display: block;
+  width: auto;
+  height: 2.3em;
+  opacity: 1;
+  border-radius: 2px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  transition: opacity var(--ease);
 }
 
-/* Phones: just the notebook */
+/* The live word stays for screen readers. */
+.tape[data-photo="loaded"] .tape__text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
-@container home (max-width: 700px) {
+@media (max-width: 700px) {
   .home-scene {
-    min-height: 0;
-    place-items: start center;
-    padding: 28px 16px 30px;
+    padding: 20px 16px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-name a,
+  .tape,
+  .tape__photo {
+    transition: none;
   }
 
-  /* Keep "COMPOSITION BOOK" on one line on the narrower label. */
-  .cover-kind {
-    letter-spacing: 0.22em;
-  }
-
-  .home-shot {
-    display: none;
-  }
-
-  .cover-book {
-    width: min(320px, 84cqw);
+  .tape:hover,
+  .tape:focus-visible {
+    transform: rotate(var(--r));
   }
 }
