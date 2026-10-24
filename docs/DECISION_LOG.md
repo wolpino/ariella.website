@@ -263,3 +263,15 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Q:** The glossy band on the cover tape dropped white-letter contrast below 4.5:1 (green 3.2:1). Keep the look or fix it?
 - **A:** Readable over appearance.
 - **Implication:** Tape colors darkened (red `#a8261e`, blue `#23488c`, green `#1d6b40`, all 6.3:1 or better with white) and the gloss kept to a thin band above the letters.
+
+## 2026-10-24 — Step 4 scope
+
+- **Q:** Keep the charcoal home from the final mockup, or go back to the notebook on wood from the old live site?
+- **A:** Ari prefers the live notebook and wood background. Do it in a separate PR after Step 3 merges.
+- **Q:** Label words? **A:** The new ones: Ari, Software engineering, photography · words.
+- **Q:** Tape for Projects and LinkedIn (only RESUME and VERSIONS were photographed)? **A:** Draw all the tape in the same style as the photographed tape.
+- **Q:** Desk photos? **A:** Keep them.
+- **Q:** Inner pages? **A:** Stay charcoal.
+- **Q:** Sticky? **A:** Bring back the work-in-progress sticky with the same wording.
+- **Q:** 404? **A:** A fun one, replacing the 2026-10-02 neutral 404. Mock options 2 (misprinted tape), 3 (Shelby ate this page) and 5 (lone sticky note).
+- **Implication:** Step 4 in [DESIGN-RESET.md](DESIGN-RESET.md). Mockups first.
