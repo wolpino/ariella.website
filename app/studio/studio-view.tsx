@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { CoverScreen } from "@/components/cover/CoverScreen";
-import { coverVariants, type CoverVariant } from "@/content/site";
+import { coverVariants, type CoverVariant } from "@/editions/catalog";
 import "./studio.css";
 
 const notes: Record<CoverVariant, string> = {
   stylized:
     "Graphic speckle, typewriter name, black desk. The flatter, poster-like cover.",
   "high-fidelity":
-    "Bowed composition label on photographed marble. Homepage default.",
+    "Bowed composition label on photographed marble. Version 2.",
   ornate: "Ornate bracket composition label on photographed marble.",
 };
 
@@ -57,9 +57,8 @@ export function StudioView() {
         </div>
       </header>
       <p className="studio-note">
-        {notes[variant]} Homepage still uses the default in{" "}
-        <code>content/site.ts</code> until you change it. Resume and editions
-        work the same as production.
+        {notes[variant]} These are the frozen covers from the editions archive.
+        The resume works the same as production.
       </p>
       <div className="studio-stage">
         <div className={phoneFrame ? "studio-frame" : "studio-canvas"}>

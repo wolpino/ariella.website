@@ -6,7 +6,7 @@
 > - Steps 1 and 2 are done. Final mockup: https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz. All picks are in `docs/DECISION_LOG.md`.
 > - Step 0 (live copy fix) is in a PR from `fix/live-copy`. Ari's answers are in the 2026-10-23 DECISION_LOG entry. Once Ari merges it, the live site has the new words.
 >
-> **Next:** Step 3, build the chosen design. Wait for Ari to ask. Still open for the build: the name/title font and a more three-dimensional cover.
+> **Step 3** is in a PR from `claude/cool-franklin-75t4bw` (2026-10-24). Still open: the name/title font, a more three-dimensional cover, and whether clicking the notebook opens Projects.
 
 Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs were archived or rewritten in Step 1 (2026-10-21); archived ones are in `docs/archive/`.
 

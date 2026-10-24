@@ -1,20 +1,16 @@
-import { cookies } from "next/headers";
-import { SiteHeader } from "@/components/site-header";
-import { isThemeId, type ThemeId } from "@/themes";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 
-export default async function SiteLayout({
+export default function SiteLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const raw = cookieStore.get("ariella-theme")?.value;
-  const initialTheme: ThemeId = isThemeId(raw) ? raw : "professional";
-
   return (
     <>
-      <SiteHeader initialTheme={initialTheme} />
+      <SiteHeader />
       <main className="site-main">{children}</main>
+      <SiteFooter />
     </>
   );
 }

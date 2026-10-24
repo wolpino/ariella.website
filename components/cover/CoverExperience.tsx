@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { NotebookCover } from "@/components/notebook/NotebookCover";
 import { ResumeModal } from "@/components/resume/ResumeModal";
-import type { CoverVariant } from "@/content/site";
+import type { CoverVariant } from "@/editions/catalog";
 
 const RESUME_PARAM = "resume";
 
