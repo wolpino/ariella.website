@@ -1,33 +1,203 @@
+/* Fun 404: Shelby on the wood desk (Step 4, 2026-10-24 mockup picks).
+   No site header or footer. The blue Dymo tape is the way home. */
+
 .not-found {
+  position: relative;
   display: grid;
   flex: 1;
   place-items: center;
   min-height: 100dvh;
-  padding: 32px var(--gutter);
+  padding: 32px 16px;
+  overflow: hidden;
   text-align: center;
+  background: #4a2e18 url("/textures/wood-desk.jpg") center / cover no-repeat;
+}
+
+.not-found__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 26px;
 }
 
 .not-found__title {
-  font: 400 clamp(40px, 6vw, 60px) / 1 var(--display);
+  font: 400 clamp(36px, 5vw, 46px) / 1 var(--display);
   color: var(--ink);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
 }
 
+/* White-border print, slightly tilted */
+.not-found__photo {
+  position: relative;
+  width: min(330px, 70vw);
+  margin: 0;
+  padding: 10px 10px 50px;
+  background: var(--paper);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  rotate: -4deg;
+}
+
+.not-found__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 52% 30%;
+}
+
+.not-found__photo figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  font: 400 clamp(19px, 4.8vw, 22px) / 1.2 var(--hand);
+  color: var(--pen);
+}
+
+/* Torn ruled-paper scraps */
+.not-found__scrap {
+  position: absolute;
+  background: #fbfaf3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  clip-path: polygon(0 8%, 22% 0, 48% 12%, 75% 0, 100% 10%, 92% 55%, 100% 100%, 60% 88%, 30% 100%, 4% 86%);
+}
+
+.not-found__scrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 7px,
+    rgba(90, 140, 190, 0.35) 7px 8px
+  );
+}
+
+.not-found__scrap--1 {
+  width: 70px;
+  height: 46px;
+  left: 22%;
+  top: 30%;
+  rotate: 18deg;
+}
+
+.not-found__scrap--2 {
+  width: 54px;
+  height: 38px;
+  left: 28%;
+  top: 62%;
+  rotate: -24deg;
+}
+
+.not-found__scrap--3 {
+  width: 62px;
+  height: 40px;
+  right: 24%;
+  top: 40%;
+  rotate: -8deg;
+}
+
+.not-found__scrap--4 {
+  width: 40px;
+  height: 30px;
+  right: 28%;
+  top: 70%;
+  rotate: 30deg;
+}
+
+@media (max-width: 640px) {
+  .not-found__scrap--1 {
+    width: 46px;
+    height: 32px;
+    left: 6%;
+    top: 12%;
+  }
+
+  .not-found__scrap--2 {
+    width: 40px;
+    height: 28px;
+    left: auto;
+    right: 7%;
+    top: 58%;
+  }
+
+  .not-found__scrap--3 {
+    width: 36px;
+    height: 26px;
+    right: auto;
+    left: 9%;
+    top: auto;
+    bottom: 12%;
+    rotate: -10deg;
+  }
+
+  .not-found__scrap--4 {
+    display: none;
+  }
+}
+
+/* Blue Dymo tape, same look as the Step 3 cover tape */
 .not-found__home {
+  --r: 3deg;
+  --tc: var(--tape-blue);
   display: inline-block;
-  margin-top: 24px;
-  padding: 7px 9px;
-  font: 500 12px / 1 var(--mono);
-  letter-spacing: 0.12em;
+  padding: 0.66em 0.5em 0.66em 0.8em;
+  font-family: var(--sans);
+  font-size: clamp(18px, 4.6vw, 22px);
+  font-stretch: 118%;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  white-space: nowrap;
+  color: #fbfbf8;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.34) 0,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0) 26%,
+      rgba(0, 0, 0, 0) 74%,
+      rgba(0, 0, 0, 0.12) 92%,
+      rgba(255, 255, 255, 0.08) 100%
+    ),
+    linear-gradient(var(--tc), var(--tc));
   border-radius: 2px;
-  transition: box-shadow var(--ease);
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.5),
+    0 -1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+    inset 0 3px 0 -2px rgba(0, 0, 0, 0.18),
+    inset 0 -4px 0 -3px rgba(255, 255, 255, 0.18),
+    0 2px 3px rgba(0, 0, 0, 0.6);
+  transform: rotate(var(--r));
+  transition:
+    box-shadow var(--ease),
+    transform var(--ease);
 }
 
 .not-found__home:hover,
 .not-found__home:focus-visible {
   box-shadow:
-    inset 0 0 0 1px var(--gold),
-    0 0 18px var(--glow);
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px var(--gold),
+    0 0 26px 4px var(--glow);
+  transform: rotate(var(--r)) translateY(-1px);
   outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found__home {
+    transition: none;
+  }
+
+  .not-found__home:hover,
+  .not-found__home:focus-visible {
+    transform: rotate(var(--r));
+  }
 }
