@@ -2,11 +2,11 @@
 
 > **Resume here.**
 >
-> **Where things stand (2026-10-23):**
-> - Steps 1 and 2 are done. Final mockup: https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz. All picks are in `docs/DECISION_LOG.md`.
-> - Step 0 (live copy fix) is in a PR from `fix/live-copy`. Ari's answers are in the 2026-10-23 DECISION_LOG entry. Once Ari merges it, the live site has the new words.
+> **Where things stand (2026-10-24):**
+> - Steps 0–2 are done. Final mockup: https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz. All picks are in `docs/DECISION_LOG.md`.
+> - Step 3 (one design) merged in PR #11.
 >
-> **Step 3** is in a PR from `claude/cool-franklin-75t4bw` (2026-10-24). Still open: the name/title font, a more three-dimensional cover, and whether clicking the notebook opens Projects.
+> **Step 4** is in a PR from `feat/step-4-wood-home`. Mockup: https://claude.ai/artifact/ERxzQtDou5BBMrLapPAbK7. The picks changed the plan below: no desk photos, photographed tape over the Step 3 tape, Shelby 404 captioned "Shelby ate it" (see the 2026-10-24 DECISION_LOG entries).
 
 Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs were archived or rewritten in Step 1 (2026-10-21); archived ones are in `docs/archive/`.
 
@@ -128,6 +128,29 @@ Ari picks one or mixes them. Record the pick in DECISION_LOG.
 - **Revisit during the build:** clicking the notebook itself (not a label) opens Projects. Replace the cover image with a more three-dimensional notebook, possibly with a gold detail.
 - **Tests:** rewrite `e2e/regression.spec.ts` around the new copy. Cover the résumé link visible on `/`, mobile nav, and the 404. Drop the cookie and theme cases.
 - **Later, re-planned against the new design:** About, photo collections, Notes.
+
+### Step 4 — Notebook on wood, drawn tape, sticky, fun 404 (new branch from `main`, after PR #11 merges)
+
+Ari's answers are in the 2026-10-24 "Step 4 scope" DECISION_LOG entry. Summary:
+
+- **Home only** moves to the notebook and wood desk Ari liked on the old live site (the edition 2 look: photographed marble cover, bowed composition label, `public/textures/wood-desk.jpg`). Inner pages (header, Projects, Contact, editions) **stay charcoal** as built in Step 3.
+- **Label:** the new words, not "Ariella's Website": NAME Ari, SUBJECT Software engineering, ALSO photography · words, in Permanent Marker. Fit them on the bowed label from `components/notebook/CompositionLabel.tsx`.
+- **Tape:** Projects, Résumé and LinkedIn are all drawn in the style of the photographed Dymo tape on the old live site (`public/textures/dymo-resume.png`, `dymo-versions.png`): black embossed plastic, raised white letters, slight grain. Live text, not images, so it stays readable and accessible. Keep white-letter contrast at 4.5:1 or better (readable over appearance, 2026-10-24). The mockup should show plain black tape and a version in the Step 3 colors (red Projects, blue Résumé, green LinkedIn) so Ari can pick.
+- **Sticky note:** the lime sticky from edition 2, same wording: "This website is a work in progress! Check back soon..." plus "last updated" with `site.lastUpdated`.
+- **Desk photos:** keep the four white-border photos around the notebook on desktop, now on the wood. On phones, still just the notebook.
+- **Frozen editions must not change.** Do not edit `components/notebook/*`, `editions/*` or `components/editions/*` in ways that change how editions 1 and 2 look. Build the home cover as new components (for example `components/home/`), copying from the notebook components rather than changing them.
+- **404:** replace the neutral 404 with a fun one. Mock all three; Ari picks one:
+  1. **Misprinted tape:** a Dymo strip reading "PAGE NOT FOUND" with one letter crooked or punched twice, and a Home strip under it.
+  2. **Shelby did it:** Shelby (`public/editions/shelby.jpg`) looking guilty, "Shelby ate this page."
+  3. **Sticky note:** a lone sticky on the desk: "Not here! Try the notebook →".
+  The 404 keeps the "Page not found" h1 (visible or screen-reader text), a link home, and no site header.
+
+Order:
+1. One mockup artifact: home at desktop and phone (black tape and color tape), plus the three 404s. No repo changes. Ari picks; log the picks in DECISION_LOG.
+2. Build on a branch from `main`. Update `e2e/regression.spec.ts` (home tapes, sticky text, 404). Lint, build, e2e, screenshots at 1280 and 390 against the mockup.
+3. PR; Ari merges.
+
+Still open, not part of Step 4 unless Ari asks: the name and title font, a more three-dimensional cover, whether clicking the notebook opens Projects, the beige `/editions` page, better photo files.
 
 ### Verification
 

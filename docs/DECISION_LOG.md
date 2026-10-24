@@ -263,3 +263,32 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Q:** The glossy band on the cover tape dropped white-letter contrast below 4.5:1 (green 3.2:1). Keep the look or fix it?
 - **A:** Readable over appearance.
 - **Implication:** Tape colors darkened (red `#a8261e`, blue `#23488c`, green `#1d6b40`, all 6.3:1 or better with white) and the gloss kept to a thin band above the letters.
+
+## 2026-10-24 — Step 4 scope
+
+- **Q:** Keep the charcoal home from the final mockup, or go back to the notebook on wood from the old live site?
+- **A:** Ari prefers the live notebook and wood background. Do it in a separate PR after Step 3 merges.
+- **Q:** Label words? **A:** The new ones: Ari, Software engineering, photography · words.
+- **Q:** Tape for Projects and LinkedIn (only RESUME and VERSIONS were photographed)? **A:** Draw all the tape in the same style as the photographed tape.
+- **Q:** Desk photos? **A:** Keep them.
+- **Q:** Inner pages? **A:** Stay charcoal.
+- **Q:** Sticky? **A:** Bring back the work-in-progress sticky with the same wording.
+- **Q:** 404? **A:** A fun one, replacing the 2026-10-02 neutral 404. Mock options 2 (misprinted tape), 3 (Shelby ate this page) and 5 (lone sticky note).
+- **Implication:** Step 4 in [DESIGN-RESET.md](DESIGN-RESET.md). Mockups first.
+
+## 2026-10-24 — Step 4 mockup picks
+
+Mockup: https://claude.ai/artifact/ERxzQtDou5BBMrLapPAbK7 (private to Ari).
+
+- **Q:** Desk photos on the wood home? **A:** No. Just the notebook on wood, at every width. This replaces "keep them" in the Step 4 scope entry.
+- **Q:** Black tape or color tape? **A:** Color (red Projects, blue Résumé, green LinkedIn). Black isn't noticeable enough on the marble.
+- **Q:** Is the drawn tape close enough to the photographed tape? **A:** The photographed tape looks better. Add texture to the drawn tape (shadows, emboss, grain) so it looks more like the photo. Contrast stays at 4.5:1 or better.
+- **Q:** Which 404? **A:** Option 2, Shelby. The heading stays "Page not found". The caption under the photo becomes "Shelby ate it".
+- **Not objected to, kept from the mockup:** Nunito as the tape font, and the sticky on the cover's right edge below the label.
+- **Implication:** One more small mockup round for the tape texture only, then the build.
+
+## 2026-10-24 — Step 4 tape: photographs
+
+- **Q:** Which drawn tape texture (T1, T2, T3)? **A:** None. Ari will photograph real tape for the labels.
+- **Q:** What if a tape photo fails to load? **A:** Fall back to the color tape from Step 3 (live text, red / blue / green). No new drawn texture.
+- **Implication:** Each cover tape is a photo layered over the Step 3 tape, with live text kept for screen readers. Résumé uses `public/textures/dymo-resume.png` for now. Projects and LinkedIn show the Step 3 tape until Ari adds `dymo-projects.png` and `dymo-linkedin.png`. Nunito is not needed. An e2e test checks that each tape image that exists loads.
