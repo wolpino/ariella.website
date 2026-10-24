@@ -2,8 +2,7 @@
 
 import { DymoTape } from "@/components/dymo/DymoTape";
 import { CompositionLabel } from "@/components/notebook/CompositionLabel";
-import type { CoverVariant } from "@/content/site";
-import { site } from "@/content/site";
+import { frozenCover, type CoverVariant } from "@/editions/catalog";
 import "./notebook.css";
 
 type NotebookCoverProps = {
@@ -34,16 +33,16 @@ export function NotebookCover({
             <div className="cover-inner">
               <div className="label-stack">
                 {marble ? (
-                  <CompositionLabel frame={labelFrame} title={site.title} />
+                  <CompositionLabel frame={labelFrame} title={frozenCover.title} />
                 ) : (
                   <div className="label">
                     <span className="label-margin" aria-hidden="true" />
                     {interactive ? (
-                      <h1 className="label-name">{site.title}</h1>
+                      <h1 className="label-name">{frozenCover.title}</h1>
                     ) : (
-                      <p className="label-name">{site.title}</p>
+                      <p className="label-name">{frozenCover.title}</p>
                     )}
-                    <p className="label-role">{site.role}</p>
+                    <p className="label-role">{frozenCover.role}</p>
                   </div>
                 )}
                 <div className="sticker" aria-hidden="true">
@@ -58,7 +57,7 @@ export function NotebookCover({
                         <span>back soon...</span>
                       </span>
                       <span className="sticker-updated">
-                        last updated: {site.lastUpdated}
+                        last updated: {frozenCover.lastUpdated}
                       </span>
                     </>
                   ) : (

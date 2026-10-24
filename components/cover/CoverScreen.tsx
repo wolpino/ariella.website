@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { CoverExperience } from "@/components/cover/CoverExperience";
 import { NotebookCover } from "@/components/notebook/NotebookCover";
-import type { CoverVariant } from "@/content/site";
+import type { CoverVariant } from "@/editions/catalog";
 
 type CoverScreenProps = {
   variant: CoverVariant;

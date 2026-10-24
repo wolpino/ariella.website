@@ -1,4 +1,13 @@
-import type { CoverVariant } from "@/content/site";
+export const coverVariants = ["stylized", "high-fidelity", "ornate"] as const;
+
+export type CoverVariant = (typeof coverVariants)[number];
+
+/** The words on the frozen notebook covers. Do not change them for the live site. */
+export const frozenCover = {
+  title: "Ariella's Website",
+  role: "software · photos · words",
+  lastUpdated: "Sep 2, 2026",
+};
 
 export type Edition = {
   number: number;
