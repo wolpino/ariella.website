@@ -286,3 +286,9 @@ Mockup: https://claude.ai/artifact/ERxzQtDou5BBMrLapPAbK7 (private to Ari).
 - **Q:** Which 404? **A:** Option 2, Shelby. The heading stays "Page not found". The caption under the photo becomes "Shelby ate it".
 - **Not objected to, kept from the mockup:** Nunito as the tape font, and the sticky on the cover's right edge below the label.
 - **Implication:** One more small mockup round for the tape texture only, then the build.
+
+## 2026-10-24 — Step 4 tape: photographs
+
+- **Q:** Which drawn tape texture (T1, T2, T3)? **A:** None. Ari will photograph real tape for the labels.
+- **Q:** What if a tape photo fails to load? **A:** Fall back to the color tape from Step 3 (live text, red / blue / green). No new drawn texture.
+- **Implication:** Each cover tape is a photo layered over the Step 3 tape, with live text kept for screen readers. Résumé uses `public/textures/dymo-resume.png` for now. Projects and LinkedIn show the Step 3 tape until Ari adds `dymo-projects.png` and `dymo-linkedin.png`. Nunito is not needed. An e2e test checks that each tape image that exists loads.
