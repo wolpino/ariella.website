@@ -275,3 +275,14 @@ Supersedes the 2026-10-02 entry and every older theme, Fun-home, and domain entr
 - **Q:** Sticky? **A:** Bring back the work-in-progress sticky with the same wording.
 - **Q:** 404? **A:** A fun one, replacing the 2026-10-02 neutral 404. Mock options 2 (misprinted tape), 3 (Shelby ate this page) and 5 (lone sticky note).
 - **Implication:** Step 4 in [DESIGN-RESET.md](DESIGN-RESET.md). Mockups first.
+
+## 2026-10-24 — Step 4 mockup picks
+
+Mockup: https://claude.ai/artifact/ERxzQtDou5BBMrLapPAbK7 (private to Ari).
+
+- **Q:** Desk photos on the wood home? **A:** No. Just the notebook on wood, at every width. This replaces "keep them" in the Step 4 scope entry.
+- **Q:** Black tape or color tape? **A:** Color (red Projects, blue Résumé, green LinkedIn). Black isn't noticeable enough on the marble.
+- **Q:** Is the drawn tape close enough to the photographed tape? **A:** The photographed tape looks better. Add texture to the drawn tape (shadows, emboss, grain) so it looks more like the photo. Contrast stays at 4.5:1 or better.
+- **Q:** Which 404? **A:** Option 2, Shelby. The heading stays "Page not found". The caption under the photo becomes "Shelby ate it".
+- **Not objected to, kept from the mockup:** Nunito as the tape font, and the sticky on the cover's right edge below the label.
+- **Implication:** One more small mockup round for the tape texture only, then the build.
