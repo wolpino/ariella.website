@@ -3,11 +3,13 @@ import "./not-found.css";
 
 export default function NotFound() {
   return (
-    <main className="not-found">
-      <div className="not-found-inner">
-        <h1>Page not found</h1>
+    <main className="not-found desk-surface">
+      <div className="not-found__inner">
+        <h1 className="not-found__title">Page not found</h1>
         <p>
-          <Link href="/">Back home</Link>
+          <Link href="/" className="not-found__home">
+            Back home
+          </Link>
         </p>
       </div>
     </main>
