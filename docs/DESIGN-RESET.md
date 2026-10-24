@@ -4,9 +4,9 @@
 >
 > **Where things stand (2026-10-24):**
 > - Steps 0–2 are done. Final mockup: https://claude.ai/artifact/7zsyoh49qp7y29v9az4Ltz. All picks are in `docs/DECISION_LOG.md`.
-> - Step 3 (one design) is in PR #11 from `claude/cool-franklin-75t4bw`. Ari merges; merging deploys.
+> - Step 3 (one design) merged in PR #11.
 >
-> **Next:** Step 4 (below): the live notebook on wood for the home page, drawn tape, the work-in-progress sticky, and a fun 404. Mockups first. Start only after PR #11 is merged, on a new branch from `main`.
+> **Step 4** is in a PR from `feat/step-4-wood-home`. Mockup: https://claude.ai/artifact/ERxzQtDou5BBMrLapPAbK7. The picks changed the plan below: no desk photos, photographed tape over the Step 3 tape, Shelby 404 captioned "Shelby ate it" (see the 2026-10-24 DECISION_LOG entries).
 
 Current direction. If this disagrees with `docs/NOTEBOOK-FUN-PLAN.md`, `docs/FUN-THEME.md`, `STATUS.md`, or `docs/DECISION_LOG.md` entries before 2026-10-20, this file wins. Those docs were archived or rewritten in Step 1 (2026-10-21); archived ones are in `docs/archive/`.
 
